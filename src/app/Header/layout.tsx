@@ -4,11 +4,11 @@ export default function HeaderLayout() {
 	return (
 		<div className={styles.header}>
 			<h1 className={styles.mainTitle}>Мой Блокнот</h1>
-			<div className={styles.search}>
-          <img src="./search.png" alt="search" />
-				<input type="search" placeholder="Найти что угодно здесь" />
-			</div>
-			<div>
+			<div className={styles.btns}>
+				<div className={styles.search}>
+					<img src="./search.png" alt="search" />
+					<input type="search" placeholder="Найти что угодно здесь" />
+				</div>
 				<button className={styles.headerBtn}>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
@@ -73,8 +73,12 @@ export default function HeaderLayout() {
 						</defs>
 					</svg>
 				</button>
-				<button className={styles.headerBtn}>
-					<img src="./profile.jpg" alt="profile photo" style={{width: '100%', height: '100%',}}/>
+				<button className={styles.headerBtnProfile}>
+					<img
+						src="./profile.jpg"
+						alt="profile photo"
+						style={{ width: '100%', height: '100%', borderRadius: '8px  ' }}
+					/>
 				</button>
 			</div>
 		</div>
