@@ -22,10 +22,20 @@ export default function RootLayout({
       <head>
         <link rel="icon" type="image/svg+xml" href="./Logo.ico" sizes="any" />
       </head>
-      <body style={{ margin: "0" }} className={inter.className}>
+      <body
+        style={{
+          margin: "0",
+          display: "flex",
+          justifyContent: "flex-start",
+          alignItems: "flex-start",
+          height: "100vh",
+          width: "100vw",
+        }}
+        className={inter.className}
+      >
+        <SidebarLayout />
         {children}
       </body>
-      <SidebarLayout />
     </html>
   );
 }
