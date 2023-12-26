@@ -29,7 +29,7 @@ export default function RootLayout({
           justifyContent: "flex-start",
           alignItems: "flex-start",
           height: "100vh",
-          width: "100vw",
+          width: "262px",
         }}
         className={inter.className}
       >
