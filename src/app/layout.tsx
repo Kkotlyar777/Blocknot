@@ -1,11 +1,15 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Lato } from "next/font/google";
 import "./globals.sass";
 import TrashLayout from "./trash/layout";
 import SidebarLayout from "./sidebar/layout";
 import styles from "./globalLayout.module.sass";
+import HeaderLayout from "./Header/layout";
 
-const inter = Inter({ subsets: ["latin"] });
+const lato = Lato({ 
+  weight: ['400', '700'],
+  subsets: ['latin'],
+ });
 
 export const metadata: Metadata = {
   title: "Bloknot",
@@ -29,11 +33,13 @@ export default function RootLayout({
           justifyContent: "flex-start",
           alignItems: "flex-start",
           height: "100vh",
-          width: "262px",
+          width: "100%",
+          background: "#FAF9F9",
         }}
-        className={inter.className}
+        className={lato.className}
       >
         <SidebarLayout />
+        <HeaderLayout/>
         {children}
       </body>
     </html>
