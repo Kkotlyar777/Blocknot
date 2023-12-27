@@ -79,7 +79,7 @@ export default function HeaderLayout() {
           <img
             src="./profile.jpg"
             alt="profile photo"
-            style={{ width: "100%", height: "100%", borderRadius: "8px  " }}
+            style={{ width: "100%", height: "100%", borderRadius: "8px" }}
           />
         </button>
       </div>
