@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import styles from "./globalLayout.module.sass";
-import { CardComp } from "./components/fileCard/Card";
+import { CardComp } from "./components/CardFiles/Card";
+import { LastFile } from "./components/lastFiles/LastFiles";
 export const metadata: Metadata = {
   title: "Bloknot",
 };
@@ -25,7 +26,14 @@ export default function Home() {
           <CardComp />
         </div>
       </div>
-      <div className={styles.underBlock}></div>
+      <h2 className={styles.secondTitle}>Последние файлы</h2>
+      <div className={styles.underBlock}>
+        <div className={styles.lastFiles}>
+          <LastFile/>
+          <LastFile/>
+          <LastFile/>
+        </div>
+      </div>
     </div>
   );
 }
