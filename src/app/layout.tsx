@@ -6,10 +6,10 @@ import SidebarLayout from "./sidebar/layout";
 import styles from "./globalLayout.module.sass";
 import HeaderLayout from "./Header/layout";
 
-const lato = Lato({ 
-  weight: ['400', '700'],
-  subsets: ['latin'],
- });
+const lato = Lato({
+  weight: ["400", "700"],
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: "Bloknot",
@@ -39,8 +39,10 @@ export default function RootLayout({
         className={lato.className}
       >
         <SidebarLayout />
-        <HeaderLayout/>
-        {children}
+        <div>
+          <HeaderLayout />
+          {children}
+        </div>
       </body>
     </html>
   );
