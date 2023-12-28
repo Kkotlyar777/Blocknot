@@ -1,3 +1,6 @@
+'use client'
+
+import Link from "next/link";
 import styles from "./sidebar.module.sass";
 
 export default function SidebarLayout() {
@@ -35,7 +38,7 @@ export default function SidebarLayout() {
                 fill="#0061FF"
               />
             </svg>
-            Главная
+            <Link href={'/'} className={styles.link}>Главная</Link>
           </li>
           <li className={styles.FileLi}>
             <svg
@@ -55,7 +58,7 @@ export default function SidebarLayout() {
               />
               <rect x="3" y="11" width="6" height="2" rx="1" fill="white" />
             </svg>
-            Мои Файлы
+            <Link href={'/MyFiles'} className={styles.link}>Мои Файлы</Link>
           </li>
           <li className={styles.StarLi}>
             <svg
@@ -70,7 +73,7 @@ export default function SidebarLayout() {
                 fill="#757897"
               />
             </svg>
-            Избранное
+            <Link href={'/selected'} className={styles.link}>Избранное</Link>
           </li>
           <li className={styles.RequseLi}>
             <svg
@@ -103,7 +106,7 @@ export default function SidebarLayout() {
                 stroke="#757897"
               />
             </svg>
-            Запрос Файлов
+            <Link href={'/FilesRequest'} className={styles.link}>Запрос Файлов</Link>
           </li>
           <li className={styles.TrechLi}>
             <svg
@@ -122,7 +125,7 @@ export default function SidebarLayout() {
                 fill="#757897"
               />
             </svg>
-            Корзина
+            <Link href={'/Basket'} className={styles.link}>Корзина</Link>
           </li>
         </ul>
       </div>

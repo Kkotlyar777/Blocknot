@@ -1,9 +1,9 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "trash",
+  title: "Basket",
 };
 
-export default function trash() {
-  return <></>;
+export default function basket() {
+  return <>Basket</>;
 }
