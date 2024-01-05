@@ -13,7 +13,7 @@ export default function requests() {
         <div className={styles.conth2}>
           <h2 className={styles.h2}>Запросы файлов</h2>
         </div>
-        <button className={styles.mainBtn}>Удалить</button>
+        <button className={styles.mainBtn}>Исходящие</button>
         <button className={styles.mainBtn1}>Входящие</button>
         <button className={styles.mainBtn2}>Новый запрос</button>
       </div>
