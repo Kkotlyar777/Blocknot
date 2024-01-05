@@ -10,7 +10,6 @@ export default function SidebarLayout() {
   const { numPage } = useAppSelector((state) => state.userReducer);
   const { setNumPage } = SideBarSlice.actions;
   const dispatch = useAppDispatch();
-  console.log(numPage);
 
   return (
     <div className={styles.sidebar}>

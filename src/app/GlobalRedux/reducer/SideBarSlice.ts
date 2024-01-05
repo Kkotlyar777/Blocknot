@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { createSlice } from "@reduxjs/toolkit";
 
@@ -7,7 +7,7 @@ interface UserState {
 }
 
 const initialState: UserState = {
-  numPage: 0,
+  numPage: Number(localStorage.getItem("numMenu")) || 0,
 };
 
 export const SideBarSlice = createSlice({
@@ -16,6 +16,7 @@ export const SideBarSlice = createSlice({
   reducers: {
     setNumPage(state, action) {
       state.numPage = action.payload;
+      localStorage.setItem("numMenu", state.numPage.toString());
     },
   },
 });
