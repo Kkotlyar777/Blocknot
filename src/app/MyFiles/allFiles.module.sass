@@ -31,11 +31,30 @@
 
 .mainBtn
     @include main-button($color-light-blue)
-    padding: 10px 43px
+    padding: 5px 20px
     color: $color-main-blue
     font-weight: 700
     font-size: 14px
     margin-right: 30px
+    flex-shrink: 0
+
+
+.mainBtn1
+    @include main-button($color-light-blue)
+    padding: 5px 20px
+    color: $color-main-blue
+    font-weight: 700
+    font-size: 14px
+    margin-right: 30px
+    flex-shrink: 0
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-shrink: 0
+
+
+    
+
 
 .FiltersCont
     display: flex
@@ -65,7 +84,7 @@
     background: $color-main-gray
     width: 100%
     opacity: .5
-    margin-bottom: 130px
+    margin-bottom: 50px
 
 .mainText
     display: flex
