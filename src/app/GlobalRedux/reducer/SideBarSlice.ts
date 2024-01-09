@@ -3,7 +3,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 interface UserState {
-  numPage: number;
+  numPage: any;
 }
 
 const initialState: UserState = {
