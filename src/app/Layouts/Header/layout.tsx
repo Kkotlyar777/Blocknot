@@ -8,7 +8,7 @@ export default function HeaderLayout() {
 	return (
 		<div
 			className={styles.header}
-			style={numPage === 4 ? { width: '80%' } : { width: '100%' }}
+			style={numPage === 4 ? { width: '80%' } : { width: '99%' }}
 		>
 			<div className={styles.cont}>
 				<div className={styles.mainTitle}>Мой Блокнот</div>
