@@ -23,12 +23,7 @@ export default function SidebarLayout() {
           <Popup mT={40} dN={numPage === 4 ? "1" : "0"} />
         </div>
         <ul className={styles.mainContLi}>
-          <li
-            className={styles.MainLi}
-            onClick={() => {
-              dispatch(setNumPage(0));
-            }}
-          >
+          <li className={styles.MainLi}>
             <svg
               width="20"
               height="20"
@@ -43,6 +38,9 @@ export default function SidebarLayout() {
             </svg>
 
             <Link
+              onClick={() => {
+                dispatch(setNumPage(0));
+              }}
               style={
                 numPage === 0 ? { color: "#0061FF" } : { color: "#838D94" }
               }
@@ -52,12 +50,7 @@ export default function SidebarLayout() {
               Главная
             </Link>
           </li>
-          <li
-            className={styles.FileLi}
-            onClick={() => {
-              dispatch(setNumPage(1));
-            }}
-          >
+          <li className={styles.FileLi}>
             <svg
               width="20"
               height="16"
@@ -76,6 +69,9 @@ export default function SidebarLayout() {
               <rect x="3" y="11" width="6" height="2" rx="1" fill="white" />
             </svg>
             <Link
+              onClick={() => {
+                dispatch(setNumPage(1));
+              }}
               href={"/MyFiles"}
               className={styles.link}
               style={
@@ -85,12 +81,7 @@ export default function SidebarLayout() {
               Мои Файлы
             </Link>
           </li>
-          <li
-            className={styles.StarLi}
-            onClick={() => {
-              dispatch(setNumPage(2));
-            }}
-          >
+          <li className={styles.StarLi}>
             <svg
               width="20"
               height="20"
@@ -104,6 +95,9 @@ export default function SidebarLayout() {
               />
             </svg>
             <Link
+              onClick={() => {
+                dispatch(setNumPage(2));
+              }}
               href={"/selected"}
               className={styles.link}
               style={
@@ -113,12 +107,7 @@ export default function SidebarLayout() {
               Избранное
             </Link>
           </li>
-          <li
-            className={styles.RequseLi}
-            onClick={() => {
-              dispatch(setNumPage(3));
-            }}
-          >
+          <li className={styles.RequseLi}>
             <svg
               width="20"
               height="16"
@@ -150,6 +139,9 @@ export default function SidebarLayout() {
               />
             </svg>
             <Link
+              onClick={() => {
+                dispatch(setNumPage(3));
+              }}
               href={"/FilesRequest"}
               className={styles.link}
               style={
@@ -159,12 +151,7 @@ export default function SidebarLayout() {
               Запрос Файлов
             </Link>
           </li>
-          <li
-            className={styles.TrechLi}
-            onClick={() => {
-              dispatch(setNumPage(4));
-            }}
-          >
+          <li className={styles.TrechLi}>
             <svg
               width="17"
               height="20"
@@ -182,6 +169,9 @@ export default function SidebarLayout() {
               />
             </svg>
             <Link
+              onClick={() => {
+                dispatch(setNumPage(4));
+              }}
               href={"/Basket"}
               className={styles.link}
               style={

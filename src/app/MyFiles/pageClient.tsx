@@ -7,7 +7,7 @@ export const PageClient = () => {
   const [files, setFiles] = useState([]);
   const [dragActive, setDragActive] = useState(false);
 
-  const handlerChange = (e) => {
+  const handlerChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
     if (e.target.files && e.target.files[0]) {
       setFiles([...e.target.files]);
@@ -150,6 +150,9 @@ export const PageClient = () => {
         onDragEnter={SetDragEnter}
         onDragOver={SetDragEnter}
         onDragLeave={SetDragOver}
+        onDragEnd={(e) => {
+          SetDragOver(e);
+        }}
       >
         <div className={styles.mainText}>
           <h3 className={styles.h3}>Тут пока пустовато...</h3>
