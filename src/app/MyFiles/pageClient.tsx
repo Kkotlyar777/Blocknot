@@ -3,8 +3,8 @@
 import { useState } from 'react';
 import styles from './allFiles.module.sass';
 import { LastFile } from '../components/lastFiles/LastFiles';
-import { useState } from "react";
-import styles from "./allFiles.module.sass";
+
+
 
 export const PageClient = () => {
   const [files, setFiles] = useState([]);
