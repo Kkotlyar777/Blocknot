@@ -3,25 +3,27 @@
 import { useState } from "react";
 import styles from "./allFiles.module.sass";
 import { LastFile } from "../components/lastFiles/LastFiles";
+import { useAppDispatch, useAppSelector } from "../hooks/redux";
+import { ArrSlice } from "../GlobalRedux/reducer/ArrSlice";
 
 export const PageClient = () => {
-  const [files, setFiles] = useState([]);
+  const { addArrEl } = ArrSlice.actions;
+  const dispatch = useAppDispatch();
   const [dragActive, setDragActive] = useState(false);
 
   const handlerChange = (e) => {
     e.preventDefault();
     if (e.target.files && e.target.files[0]) {
-      setFiles([...e.target.files]);
+      dispatch(addArrEl([...e.target.files]));
     }
-    console.log(files);
   };
 
   const handlerDragChange = (e) => {
     e.preventDefault();
     if (e.dataTransfer.files && e.dataTransfer.files[0]) {
-      setFiles([...e.dataTransfer.files]);
+      dispatch(addArrEl([...e.dataTransfer.files]));
     }
-    console.log(files);
+    setDragActive(false);
   };
 
   const SetDragEnter = (e) => {
@@ -163,19 +165,6 @@ export const PageClient = () => {
             </div>
           ) : (
             <>
-              <LastFile />
-              <LastFile />
-              <LastFile />
-              <LastFile />
-              <LastFile />
-              <LastFile />
-              <LastFile />
-              <LastFile />
-              <LastFile />
-              <LastFile />
-              <LastFile />
-              <LastFile />
-              <LastFile />
               <LastFile />
             </>
           )}
