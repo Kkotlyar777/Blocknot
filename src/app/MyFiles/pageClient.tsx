@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import styles from './allFiles.module.sass';
+import { LastFile } from '../components/lastFiles/LastFiles';
 
 export const PageClient = () => {
 	const [files, setFiles] = useState([]);
@@ -37,7 +38,7 @@ export const PageClient = () => {
 			<div className={styles.FiltersCont}>
 				<ul className={styles.Filters}>
 					<li>
-						Имя{' '}
+						Имя
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
 							width="8"
@@ -56,7 +57,7 @@ export const PageClient = () => {
 						</svg>
 					</li>
 					<li>
-						Создано{' '}
+						Создано
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
 							width="8"
@@ -75,7 +76,7 @@ export const PageClient = () => {
 						</svg>
 					</li>
 					<li>
-						Отправитель{' '}
+						Отправитель
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
 							width="8"
@@ -94,7 +95,7 @@ export const PageClient = () => {
 						</svg>
 					</li>
 					<li>
-						Размер{' '}
+						Размер
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
 							width="8"
@@ -115,15 +116,131 @@ export const PageClient = () => {
 				</ul>
 			</div>
 			<span className={styles.underLine}></span>
-			<div className={styles.DragDrop}>
-				<div className={styles.mainText}>
-					<h3 className={styles.h3}>Тут пока пустовато...</h3>
-					<span className={styles.mainText}>
-						Добавляйте файлы сюда, если не хотите их потерять.
-					</span>
-					<img src="/MyFiles.png" alt="MyFiles" />
+			<form className={styles.DragDrop}>
+				<div className={styles.DragDrops}>
+					<LastFile />
+					<LastFile />
+					<LastFile />
+					<LastFile />
+					<LastFile />
+					<LastFile />
+					<LastFile />
+					<LastFile />
+					<LastFile />
+					<LastFile />
+					<LastFile />
+					<LastFile />
+					<LastFile />
+					<LastFile />
+					<LastFile />
+					<LastFile />
+					<LastFile />
+					<LastFile />
+					<LastFile />
+					<LastFile />
+					<LastFile />
+					<LastFile />
+					<LastFile />
+          <LastFile />
+          <LastFile />
+					<LastFile />
+					<LastFile />
+					<LastFile />
+					<LastFile />
+          <LastFile />
+          <LastFile />
+					<LastFile />
+					<LastFile />
+					<LastFile />
+					<LastFile />
+					<LastFile />
+					<LastFile />
+					<LastFile />
+					<LastFile />
+					<LastFile />
+					<LastFile />
+					<LastFile />
+					<LastFile />
+					<LastFile />
+					<LastFile />
+					<LastFile />
+					<LastFile />
+					<LastFile />
+          <LastFile />
+          <LastFile />
+					<LastFile />
+					<LastFile />
+					<LastFile />
+					<LastFile />
+          <LastFile />
+          <LastFile />
+					<LastFile />
+					<LastFile />
+					<LastFile />
+					<LastFile />
+					<LastFile />
+					<LastFile />
+					<LastFile />
+					<LastFile />
+					<LastFile />
+					<LastFile />
+					<LastFile />
+					<LastFile />
+					<LastFile />
+					<LastFile />
+					<LastFile />
+					<LastFile />
+					<LastFile />
+					<LastFile />
+					<LastFile />
+					<LastFile />
+					<LastFile />
+					<LastFile />
+          <LastFile />
+          <LastFile />
+					<LastFile />
+					<LastFile />
+					<LastFile />
+					<LastFile />
+          <LastFile />
+          <LastFile />
+					<LastFile />
+					<LastFile />
+					<LastFile />
+					<LastFile />
+					<LastFile />
+					<LastFile />
+					<LastFile />
+					<LastFile />
+					<LastFile />
+					<LastFile />
+					<LastFile />
+					<LastFile />
+					<LastFile />
+					<LastFile />
+					<LastFile />
+					<LastFile />
+					<LastFile />
+          <LastFile />
+          <LastFile />
+					<LastFile />
+					<LastFile />
+					<LastFile />
+					<LastFile />
+          <LastFile />
 				</div>
-			</div>
+				{false ? (
+					<div className={styles.mainText}>
+						<h3 className={styles.h3}>Тут пока пустовато...</h3>
+						<span className={styles.mainText}>
+							Добавляйте файлы сюда, если не хотите их потерять.
+						</span>
+						<img src="/MyFiles.png" alt="MyFiles" />
+					</div>
+				) : (
+					<></>
+				)}
+			</form>
 		</div>
 	);
 };

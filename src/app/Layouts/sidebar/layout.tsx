@@ -4,7 +4,7 @@ import Link from "next/link";
 import styles from "./sidebar.module.sass";
 import { useAppDispatch, useAppSelector } from "../../hooks/redux";
 import { SideBarSlice } from "../../GlobalRedux/reducer/SideBarSlice";
-import { Popup } from "@/app/components/Popup";
+import { Popup } from "@/app/components/popup/Popup";
 
 export default function SidebarLayout() {
   const { numPage } = useAppSelector((state) => state.userReducer);
