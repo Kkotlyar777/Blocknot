@@ -6,17 +6,25 @@ import { ArrSlice } from "@/app/GlobalRedux/reducer/ArrSlice";
 import { GlobalSvgSelector } from "./GlobalSvgSel";
 import { useState } from "react";
 
-export const LastFile = (props: any) => {
+export const LastFile = () => {
   //-------------------------------------------------
-  const { arrAll } = useAppSelector((state) => state.ArrSlice);
-  const { addArrEl } = ArrSlice.actions;
+  const { arrAll, currentFile } = useAppSelector((state) => state.ArrSlice);
+  const { SetCurrentFile } = ArrSlice.actions;
   const dispatch = useAppDispatch();
 
   //-------------------------------------------------
+  console.log(currentFile);
 
   return arrAll.map((Prpops: any) => {
     return (
-      <div className={stylesCardLast.LastFile}>
+      <div
+        className={stylesCardLast.LastFile}
+        key={Prpops.id}
+        onClick={() => {
+          dispatch(SetCurrentFile(Prpops.id));
+        }}
+        style={currentFile === Prpops.id ? { background: "#b5cafc" } : {}}
+      >
         <div className={stylesCardLast.lastFileName}>
           <div className={stylesCardLast.lastFilesIcon}>
             <GlobalSvgSelector id={Prpops.type} />
