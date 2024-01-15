@@ -4,11 +4,12 @@ import stylesCard from "./components/CardFiles/Card.module.sass";
 import { CardComp } from "./components/CardFiles/Card";
 import { LastFile } from "./components/lastFiles/LastFiles";
 import stylesCardLast from "./components/lastFiles/Files.module.sass";
+import { ButtonMain } from "./components/addButtonMain/button";
 export const metadata: Metadata = {
   title: "Bloknot",
 };
 // будет получатьсбя с бэка в компонентах
-// добавить типизацию
+
 
 export default function Home() {
   return (
@@ -19,10 +20,10 @@ export default function Home() {
           <div className={styles.textCont}>
             <div className={styles.textTwo}>Добро пожаловать, Михаил! 👋 </div>
           </div>
-          <button className={styles.btn}>+ Добавить </button>
+          <ButtonMain/>
         </div>
         <div className={styles.CardArr}>
-          <CardComp />
+          <CardComp/>
         </div>
       </div>
       <h2 className={styles.secondTitle}>Последние файлы</h2>
