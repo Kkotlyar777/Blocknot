@@ -55,6 +55,7 @@ const initialState = {
     },
   ],
   currentFile: NaN,
+  currentPop: false,
   arrAll: [
     {
       name: "Документы.zip",
@@ -117,6 +118,9 @@ export const ArrSlice = createSlice({
     },
     SetCurrentFile(state, action) {
       state.currentFile = action.payload;
+    },
+    SetCurrentPop(state, action) {
+      state.currentPop = action.payload;
     },
     DelCurrentFile(state, action) {
       state.arrAll.map((el, ind) => {

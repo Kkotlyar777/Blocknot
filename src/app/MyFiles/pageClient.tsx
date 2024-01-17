@@ -2,13 +2,13 @@
 
 import { useState } from "react";
 import styles from "./allFiles.module.sass";
-import { LastFile } from "../components/lastFiles/LastFiles";
 import { useAppDispatch, useAppSelector } from "../hooks/redux";
 import { ArrSlice } from "../GlobalRedux/reducer/ArrSlice";
+import { MyFile } from "../components/МуFiles/MyFiles";
 
 export const PageClient = () => {
   const { arrAll, currentFile } = useAppSelector((state) => state.ArrSlice);
-  const { addArrEl, DelCurrentFile } = ArrSlice.actions;
+  const { addArrEl, DelCurrentFile, SetCurrentPop } = ArrSlice.actions;
   const dispatch = useAppDispatch();
   const [dragActive, setDragActive] = useState(false);
 
@@ -164,7 +164,7 @@ export const PageClient = () => {
       >
         <div className={styles.DragDrops}>
           {arrAll ? (
-            <LastFile />
+            <MyFile />
           ) : (
             <>
               <div className={styles.mainText}>
