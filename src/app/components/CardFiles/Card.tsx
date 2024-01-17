@@ -1,37 +1,21 @@
-'use client'
+'use client';
 
+import { useAppDispatch, useAppSelector } from '@/app/hooks/redux';
 import stylesCard from './Card.module.sass';
+import { ArrSlice } from '@/app/GlobalRedux/reducer/ArrSlice';
 import { useState } from 'react';
-import { useRef } from 'react';
-
 
 export const CardComp = () => {
-	const ArrCard: any = [
-		{ name: 'Документы', date: 'Nov 15, 2021, 09:45 AM', fileNums: 1.322, id: 'qweqsadawa' },
-		{ name: 'Фото', date: ' Jan 7, 2022, 03:30 PM', fileNums: 8.442, id: 'jhfggfhv' },
-		{ name: 'Новый год22', date: 'Mar 20, 2022, 10:15 AM', fileNums: 1.0, id: 'awdawdsax' },
-		{ name: 'Старый Год 33', date: 'Apr 5, 2022, 01:00 PM', fileNums: 1.235, id: 'asvxs' },
-		{ name: 'Откаты на форум', date: 'Feb 12, 2022, 05:55 PM', fileNums: 7.381, id: 'asdafww'},
-		{ name: 'Очень секретно', date: 'May 25, 2022, 11:20 AM', fileNums: 3.515, id: 'asdwawd' },
-		{ name: 'Git', date: 'Jul 8, 2022, 08:10 AM', fileNums: 7.962, id: 'ddfhhfccdhgf' },
-	];
+	const { ArrCards } = useAppSelector((state) => state.ArrSlice);
+	const { AddCard } = ArrSlice.actions;
+	const dispatch = useAppDispatch();
 
-	const [cards, setCards] = useState(ArrCard);
+	const [name, setName] = useState('');
+	console.log(name);
 
-  const addCard = () => {
-    setCards([...ArrCard, {
-      name: '123',
-      date: 'Mar 20, 2022, 10:15 AM',
-      fileNums: 1.235,
-      id: new Date(),
-    }])
-  }
-  console.log(cards)
-
-
-	return ArrCard.map((Prpops: any) => {
+	return ArrCards.map((Prpops: any) => {
 		return (
-			<div className={stylesCard.CardCont} onClick={() => {addCard()}}>
+			<div className={stylesCard.CardCont}>
 				<div className={stylesCard.upCont}>
 					<div className={stylesCard.svgBlock}>
 						<svg
@@ -49,6 +33,13 @@ export const CardComp = () => {
 					</div>
 					<div className={stylesCard.Contdoc}>
 						<div className={stylesCard.txt}>{Prpops.name}</div>
+						<input
+							type="text"
+							className={stylesCard.txt}
+							onChange={(e) => setName(e.target.value)}
+							value={name}
+							onKeyDown={(e) => e.key === 'Enter' && AddCard(name)}
+						/>
 						<div className={stylesCard.date}>{Prpops.date}</div>
 					</div>
 					<svg
@@ -99,4 +90,3 @@ export const CardComp = () => {
 		);
 	});
 };
-
