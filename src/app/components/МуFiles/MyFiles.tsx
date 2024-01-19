@@ -13,7 +13,7 @@ export const MyFile = () => {
   );
   const { SetCurrentFile, SetCurrentPop, DelCurrentFile } = ArrSlice.actions;
   const dispatch = useAppDispatch();
-  const [currentdot, setCurrentdot] = useState(false);
+  // const [currentdot, setCurrentdot] = useState(false);
   //-------------------------------------------------
   return arrAll.map((Prpops: any) => {
     return (

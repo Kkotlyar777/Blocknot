@@ -116,6 +116,8 @@ export const ArrSlice = createSlice({
   reducers: {
     addArrEl(state, action) {
       state.arrAll = [...action.payload, ...state.arrAll];
+      console.log(state.arrAll);
+      
     },
     SetCurrentFile(state, action) {
       state.currentFile = action.payload;

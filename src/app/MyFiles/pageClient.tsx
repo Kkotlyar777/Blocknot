@@ -37,7 +37,7 @@ export const PageClient = () => {
     setDragActive(false);
   };
 
-  console.log(arrAll.length);
+  // console.log(arrAll.length);
 
   return (
     <div
