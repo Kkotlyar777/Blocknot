@@ -20,6 +20,9 @@ export const MyFile = () => {
     if (el === "application") {
       return { background: "#ACCCFF" };
     }
+    if (el === "image") {
+      return { background: "#FFE5CD" };
+    }
     if (el === "audio") {
       return { background: "#FFC3C3" };
     }
