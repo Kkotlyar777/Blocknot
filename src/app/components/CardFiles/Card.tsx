@@ -3,12 +3,7 @@
 import { useAppDispatch, useAppSelector } from "@/app/hooks/redux";
 import stylesCard from "./Card.module.sass";
 import { ArrSlice } from "@/app/GlobalRedux/reducer/ArrSlice";
-import { useState } from "react";
-import { useAppDispatch, useAppSelector } from '@/app/hooks/redux';
-import stylesCard from './Card.module.sass';
-import { ArrSlice } from '@/app/GlobalRedux/reducer/ArrSlice';
-import { useState } from 'react';
-import { log } from 'console';
+
 
 export const CardComp = () => {
 	const { ArrCards, currentInput } = useAppSelector((state) => state.ArrSlice);
