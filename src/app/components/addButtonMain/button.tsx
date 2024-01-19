@@ -1,5 +1,5 @@
 'use client';
-import styles from "./Button.sass"
+import styles from "./Button.module.sass"
 import { ArrSlice } from "@/app/GlobalRedux/reducer/ArrSlice";
 import { useAppDispatch, useAppSelector } from "@/app/hooks/redux";
 

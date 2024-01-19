@@ -107,6 +107,7 @@ const initialState = {
       id: 6,
     },
   ],
+  currentInput: '',
 };
 
 export const ArrSlice = createSlice({
@@ -133,14 +134,21 @@ export const ArrSlice = createSlice({
       state.ArrCards = [
         ...state.ArrCards,
         {
-          name: "Очень секретно23232.zip",
+          name: '',
           date: "May 25, 2022, 11:20 AM",
           fileNums: 3.515,
           type: "zip",
-          id: 7,
+          id: state.ArrCards.slice(0).length
         },
       ];
     },
+    AddInput(state, action) {
+      state.currentInput = action.payload
+    },
+    SetName(state, action) {
+      state.ArrCards[state.ArrCards.length-1].name = state.currentInput
+    },
+    
   },
 });
 

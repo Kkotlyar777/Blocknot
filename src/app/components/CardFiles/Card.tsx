@@ -4,18 +4,24 @@ import { useAppDispatch, useAppSelector } from '@/app/hooks/redux';
 import stylesCard from './Card.module.sass';
 import { ArrSlice } from '@/app/GlobalRedux/reducer/ArrSlice';
 import { useState } from 'react';
+import { log } from 'console';
 
 export const CardComp = () => {
-	const { ArrCards } = useAppSelector((state) => state.ArrSlice);
-	const { AddCard } = ArrSlice.actions;
+	const { ArrCards, currentInput } = useAppSelector((state) => state.ArrSlice);
+	const { AddInput, SetName } = ArrSlice.actions;
 	const dispatch = useAppDispatch();
-
-	const [name, setName] = useState('');
-	console.log(name);
 
 	return ArrCards.map((Prpops: any) => {
 		return (
-			<div className={stylesCard.CardCont}>
+			<div
+				className={stylesCard.CardCont}
+				onClick={() => {
+					dispatch(SetName());
+					currentInput !== ''
+						? dispatch(AddInput(currentInput))
+						: dispatch(AddInput(''));
+				}}
+			>
 				<div className={stylesCard.upCont}>
 					<div className={stylesCard.svgBlock}>
 						<svg
@@ -32,14 +38,19 @@ export const CardComp = () => {
 						</svg>
 					</div>
 					<div className={stylesCard.Contdoc}>
-						<div className={stylesCard.txt}>{Prpops.name}</div>
-						<input
-							type="text"
-							className={stylesCard.txt}
-							onChange={(e) => setName(e.target.value)}
-							value={name}
-							onKeyDown={(e) => e.key === 'Enter' && AddCard(name)}
-						/>
+						<div className={stylesCard.txt}></div>
+						{ArrCards[ArrCards.length - 1].name === '' &&
+						ArrCards[ArrCards.length - 1].id === Prpops.id ? (
+							<input
+								type="text"
+								className={stylesCard.txt}
+								onChange={(e) => dispatch(AddInput(e.target.value))}
+								onKeyDown={(e) => e.key === 'Enter' && dispatch(SetName())}
+								onClick={(e) => e.stopPropagation()}
+							/>
+						) : (
+							Prpops.name
+						)}
 						<div className={stylesCard.date}>{Prpops.date}</div>
 					</div>
 					<svg
