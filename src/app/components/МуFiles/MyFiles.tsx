@@ -11,7 +11,7 @@ export const MyFile = () => {
   const { arrAll, currentFile, currentPop } = useAppSelector(
     (state) => state.ArrSlice
   );
-  const { SetCurrentFile, SetCurrentPop } = ArrSlice.actions;
+  const { SetCurrentFile, SetCurrentPop, DelCurrentFile } = ArrSlice.actions;
   const dispatch = useAppDispatch();
   const [currentdot, setCurrentdot] = useState(false);
   //-------------------------------------------------
@@ -61,6 +61,8 @@ export const MyFile = () => {
             className={stylesCardLast.svgCont}
             onClick={(e) => {
               dispatch(SetCurrentPop(true));
+              dispatch(SetCurrentFile(Prpops.id));
+              e.stopPropagation();
             }}
           >
             <svg
@@ -105,7 +107,14 @@ export const MyFile = () => {
                   : { display: "none" }
               }
             >
-              <div className={stylesCardLast.delCard}>Удалить</div>
+              <div
+                className={stylesCardLast.delCard}
+                onClick={() => {
+                  dispatch(DelCurrentFile(currentFile));
+                }}
+              >
+                Удалить
+              </div>
               <div className={stylesCardLast.renameCard}>Переименовать</div>
               <div className={stylesCardLast.download}>Скачать</div>
               <div className={stylesCardLast.info}>Информация</div>
