@@ -13,8 +13,21 @@ export const MyFile = () => {
   );
   const { SetCurrentFile, SetCurrentPop, DelCurrentFile } = ArrSlice.actions;
   const dispatch = useAppDispatch();
-  const [currentdot, setCurrentdot] = useState(false);
+  const [currentInput, setCurrentInput] = useState("");
   //-------------------------------------------------
+
+  const changeColor = (el) => {
+    if (el === "application") {
+      return { background: "#ACCCFF" };
+    }
+    if (el === "audio") {
+      return { background: "#FFC3C3" };
+    }
+    if (el === "video") {
+      return { background: "#F1CDFF" };
+    }
+  };
+
   return arrAll.map((Prpops: any) => {
     return (
       <div
@@ -26,8 +39,11 @@ export const MyFile = () => {
         style={currentFile === Prpops.id ? { background: "#b5cafc" } : {}}
       >
         <div className={stylesCardLast.lastFileName}>
-          <div className={stylesCardLast.lastFilesIcon}>
-            <GlobalSvgSelector id={Prpops.type} />
+          <div
+            className={stylesCardLast.lastFilesIcon}
+            style={changeColor(Prpops.type.split("/")[0])}
+          >
+            <GlobalSvgSelector id={Prpops.type.split("/")[0]} />
           </div>
           <span className={stylesCardLast.fileName}>{Prpops.name}</span>
         </div>
@@ -54,9 +70,17 @@ export const MyFile = () => {
           />
           <div className={stylesCardLast.moreImg}>+12</div>
         </div>
-        <span className={stylesCardLast.fileSize}>2.8 MB</span>
+        <span className={stylesCardLast.fileSize}>
+          {(Prpops.size / 1048576).toFixed(2)} MB
+        </span>
         <div className={stylesCardLast.fileSizeDiv}>
-          <span className={stylesCardLast.fileDate}>{Prpops.date}</span>
+          <span className={stylesCardLast.fileDate}>
+            {new Date(Prpops.lastModified)
+              .toString()
+              .split(" ")
+              .splice(0, 4)
+              .join(" ")}
+          </span>
           <div
             className={stylesCardLast.svgCont}
             onClick={(e) => {

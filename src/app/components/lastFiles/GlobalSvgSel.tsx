@@ -60,7 +60,7 @@ export const GlobalSvgSelector = ({ id }: Props) => {
           </defs>
         </svg>
       );
-    case "zip":
+    case "application":
       return (
         <svg
           width="18"
@@ -75,8 +75,35 @@ export const GlobalSvgSelector = ({ id }: Props) => {
           />
         </svg>
       );
-      break;
+    case "audio":
+      return (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+        >
+          <path
+            d="M10 7V16.4C9.6 16.2 9.1 16 8.5 16C7.1 16 6 16.9 6 18C6 19.1 7.1 20 8.5 20C9.9 20 11 19.1 11 18V10.7L18 8.4V13.5C17.6 13.2 17.1 13 16.5 13C15.1 13 14 13.9 14 15C14 16.1 15.1 17 16.5 17C17.9 17 19 16.1 19 15V4L10 7Z"
+            fill="#C43333"
+          />
+        </svg>
+      );
     default:
-      break;
+      return (
+        <svg
+          width="18"
+          height="14"
+          viewBox="0 0 18 14"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M16.3154 1.79424H9.08882L7.65137 0.0883548C7.60301 0.0303156 7.53055 -0.00223361 7.45499 0.000119331H1.62466C0.734496 0.00658992 0.0163574 0.728943 0.0163574 1.61777V12.1099C0.0174375 13.0018 0.741271 13.7245 1.63448 13.7256H16.3154C17.2086 13.7245 17.9324 13.0018 17.9335 12.1099V3.40992C17.9324 2.51806 17.2086 1.79532 16.3154 1.79424Z"
+            fill="#0061FF"
+          />
+        </svg>
+      );
   }
 };
