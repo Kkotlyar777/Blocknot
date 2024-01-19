@@ -15,14 +15,14 @@ export const PageClient = () => {
   const handlerChange = (e) => {
     e.preventDefault();
     if (e.target.files && e.target.files[0]) {
-      dispatch(addArrEl([...e.target.files]));
+      dispatch(addArrEl(e.target.files));
     }
   };
 
   const handlerDragChange = (e) => {
     e.preventDefault();
     if (e.dataTransfer.files && e.dataTransfer.files[0]) {
-      dispatch(addArrEl([...e.dataTransfer.files]));
+      dispatch(addArrEl(e.dataTransfer.files));
     }
     setDragActive(false);
   };
@@ -36,8 +36,6 @@ export const PageClient = () => {
     e.preventDefault();
     setDragActive(false);
   };
-
-  // console.log(arrAll.length);
 
   return (
     <div

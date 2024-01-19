@@ -6,49 +6,49 @@ const initialState = {
   ArrCards: [
     {
       name: "ПапкаДокументы.zip",
-      date: "Nov 15, 2021, 09:45 AM",
+      lastModified: "Nov 15, 2021, 09:45 AM",
       fileNums: 1.322,
       type: "image",
       id: 0,
     },
     {
       name: "ПапкаФото.png",
-      date: " Jan 7, 2022, 03:30 PM",
+      lastModified: " Jan 7, 2022, 03:30 PM",
       fileNums: 8.442,
       type: "image",
       id: 1,
     },
     {
       name: "ПапкаНовый год22.jpg",
-      date: "Mar 20, 2022, 10:15 AM",
+      lastModified: "Mar 20, 2022, 10:15 AM",
       fileNums: 1.0,
       type: "image",
       id: 2,
     },
     {
       name: "ПапкаСтарый Год 33.mp4",
-      date: "Apr 5, 2022, 01:00 PM",
+      lastModified: "Apr 5, 2022, 01:00 PM",
       fileNums: 1.235,
       type: "image",
       id: 3,
     },
     {
       name: "ПапкаОткаты на форум.mp3",
-      date: "Feb 12, 2022, 05:55 PM",
+      lastModified: "Feb 12, 2022, 05:55 PM",
       fileNums: 7.381,
       type: "video",
       id: 4,
     },
     {
       name: "ПапкаОчень секретно.zip",
-      date: "May 25, 2022, 11:20 AM",
+      lastModified: "May 25, 2022, 11:20 AM",
       fileNums: 3.515,
       type: "zip",
       id: 5,
     },
     {
       name: "ПапкаGit.zip",
-      date: "Jul 8, 2022, 08:10 AM",
+      lastModified: "Jul 8, 2022, 08:10 AM",
       fileNums: 7.962,
       type: "zip",
       id: 6,
@@ -58,56 +58,63 @@ const initialState = {
   currentPop: false,
   arrAll: [
     {
-      name: "Документы.zip",
-      date: "Nov 15, 2021, 09:45 AM",
+      name: "Документы.jpeg",
+      lastModified: 1701202439674,
       fileNums: 1.322,
-      type: "image",
+      type: "image/jpeg",
       id: 0,
+      size: 1231233,
     },
     {
       name: "Фото.png",
-      date: " Jan 7, 2022, 03:30 PM",
+      lastModified: 1701202439674,
       fileNums: 8.442,
-      type: "image",
+      type: "image/png",
       id: 1,
+      size: 1231233,
     },
     {
       name: "Новый год22.jpg",
-      date: "Mar 20, 2022, 10:15 AM",
+      lastModified: 1701202439674,
       fileNums: 1.0,
-      type: "image",
+      type: "image/jpeg",
       id: 2,
+      size: 1231233,
     },
     {
       name: "Старый Год 33.mp4",
-      date: "Apr 5, 2022, 01:00 PM",
+      lastModified: 1701202439674,
       fileNums: 1.235,
-      type: "image",
+      type: "video/mp4",
       id: 3,
+      size: 1231233,
     },
     {
       name: "Откаты на форум.mp3",
-      date: "Feb 12, 2022, 05:55 PM",
+      lastModified: 1701202439674,
       fileNums: 7.381,
-      type: "video",
+      type: "audio/mpeg",
       id: 4,
+      size: 1231233,
     },
     {
       name: "Очень секретно.zip",
-      date: "May 25, 2022, 11:20 AM",
+      lastModified: 1701202439674,
       fileNums: 3.515,
-      type: "zip",
+      type: "application",
       id: 5,
+      size: 1231233,
     },
     {
       name: "Git.zip",
-      date: "Jul 8, 2022, 08:10 AM",
+      lastModified: 1701202439674,
       fileNums: 7.962,
-      type: "zip",
+      type: "application",
       id: 6,
+      size: 1231233,
     },
   ],
-  currentInput: '',
+  currentInput: "",
 };
 
 export const ArrSlice = createSlice({
@@ -115,6 +122,7 @@ export const ArrSlice = createSlice({
   initialState,
   reducers: {
     addArrEl(state, action) {
+      // state.arrAll = action.payload.concat(state.arrAll);
       state.arrAll = [...action.payload, ...state.arrAll];
       console.log(state.arrAll);
       
@@ -136,21 +144,20 @@ export const ArrSlice = createSlice({
       state.ArrCards = [
         ...state.ArrCards,
         {
-          name: '',
-          date: "May 25, 2022, 11:20 AM",
+          name: "",
+          lastModified: "May 25, 2022, 11:20 AM",
           fileNums: 3.515,
           type: "zip",
-          id: state.ArrCards.slice(0).length
+          id: state.ArrCards.slice(0).length,
         },
       ];
     },
     AddInput(state, action) {
-      state.currentInput = action.payload
+      state.currentInput = action.payload;
     },
     SetName(state, action) {
-      state.ArrCards[state.ArrCards.length-1].name = state.currentInput
+      state.ArrCards[state.ArrCards.length - 1].name = state.currentInput;
     },
-    
   },
 });
 
