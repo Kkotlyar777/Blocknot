@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { useState } from "react";
 import styles from "./allFiles.module.sass";
@@ -27,18 +27,25 @@ export const PageClient = () => {
     setDragActive(false);
   };
 
-	const SetDragEnter = (e) => {
-		e.preventDefault();
-		setDragActive(true);
-	};
+  const SetDragEnter = (e) => {
+    e.preventDefault();
+    setDragActive(true);
+  };
 
-	const SetDragOver = (e) => {
-		e.preventDefault();
-		setDragActive(false);
-	};
+  const SetDragOver = (e) => {
+    e.preventDefault();
+    setDragActive(false);
+  };
+
+  console.log(arrAll.length);
 
   return (
-    <div className={styles.mainCont}>
+    <div
+      className={styles.mainCont}
+      onClick={(e) => {
+        dispatch(SetCurrentPop(false));
+      }}
+    >
       <div className={styles.upCont}>
         <div className={styles.conth2}>
           <h2 className={styles.h2}>Мои файлы</h2>
@@ -163,7 +170,7 @@ export const PageClient = () => {
         onDragLeave={SetDragOver}
       >
         <div className={styles.DragDrops}>
-          {arrAll ? (
+          {arrAll.length > 0 ? (
             <MyFile />
           ) : (
             <>
