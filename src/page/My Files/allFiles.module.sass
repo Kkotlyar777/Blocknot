@@ -1,0 +1,103 @@
+@import ../../app/MainLayout/globals
+.upCont
+    display: flex
+    width: calc(100vw - 352px)
+    height: 40px
+    align-items: center
+    margin-bottom: 60px
+
+.h2
+    color: $color-dark-blue
+    font-size: 26px
+    font-style: normal
+    font-weight: 400
+    line-height: normal
+    margin: 0
+
+.conth2
+    display: flex
+    flex-shrink: 1
+    min-width: 234px
+    justify-content: flex-start
+    width: 100%
+
+.FilesPath
+    font-size: 24px
+    color: $color-main-gray
+    margin-right: 30%
+    flex-shrink: 0
+
+.mainBtn
+    @include main-button($color-light-blue)
+    padding: 5px 20px
+    color: $color-main-blue
+    font-weight: 700
+    font-size: 14px
+    margin-right: 30px
+    flex-shrink: 0
+    display: flex
+    justify-content: center
+    align-items: center
+  
+
+.mainBtn1
+    @include main-button($color-light-blue)
+    padding: 0 20px
+    color: $color-main-blue
+    font-weight: 700
+    font-size: 14px
+    margin-right: 30px
+    flex-shrink: 0
+    
+
+.FiltersCont
+    display: flex
+    flex-direction: row
+    width: 90%
+    justify-content: space-between
+    align-items: center
+    height: 70px
+
+.Filters
+    display: flex
+    flex-direction: row
+    width: 95%
+    justify-content: space-between
+    align-items: center
+    height: 70px
+    li
+        display: flex
+        text-decoration: none
+        list-style-type: none
+        gap: 10px
+.underLine
+    display: flex
+    height: 2px
+    background: $color-main-gray
+    width: 100%
+    opacity: .5
+    margin-bottom: 50px
+
+.mainText
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-direction: column
+
+.h3
+    font-size: 20px
+    margin: 0
+    margin-bottom: 20px
+    color: black
+
+.mainText
+    color: $color-main-gray
+    font-size: 18px
+    margin-bottom: 30px
+
+.DragDrops
+    display: flex
+    flex-direction: column
+    justify-content: flex-start
+    overflow: auto
+    height: 550px
