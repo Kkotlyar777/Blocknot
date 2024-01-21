@@ -9,6 +9,8 @@ export const CardComp = () => {
   const { AddInput, SetName } = ArrSlice.actions;
   const dispatch = useAppDispatch();
 
+  const addInputs = () => {}
+
   return ArrCards.map((Prpops: any) => {
     return (
       <div
@@ -16,8 +18,8 @@ export const CardComp = () => {
         onClick={() => {
           dispatch(SetName());
           currentInput !== ""
-            ? dispatch(AddInput(""))
-            : dispatch(AddInput(currentInput));
+            ? dispatch(AddInput(currentInput))
+            : dispatch(AddInput(""));
         }}
       >
         <div className={stylesCard.upCont}>
@@ -36,15 +38,17 @@ export const CardComp = () => {
             </svg>
           </div>
           <div className={stylesCard.Contdoc}>
-            <div className={stylesCard.txt}></div>
+            <div className={stylesCard.Maintxt}></div>
             {ArrCards[ArrCards.length - 1].name === "" &&
             ArrCards[ArrCards.length - 1].id === Prpops.id ? (
               <input
                 type="text"
-                className={stylesCard.txt}
+                className={stylesCard.Maintxt}
                 onChange={(e) => dispatch(AddInput(e.target.value))}
                 onKeyDown={(e) => e.key === "Enter" && dispatch(SetName())}
                 onClick={(e) => e.stopPropagation()}
+                placeholder="Название"
+                
               />
             ) : (
               Prpops.name
