@@ -1,9 +1,9 @@
 "use client";
 
-import { useAppDispatch, useAppSelector } from "@/app/hooks/redux";
+import { useAppDispatch, useAppSelector } from "@/features/hooks/redux";
 import stylesCardLast from "./MyFiles.module.sass";
 import { ArrSlice } from "@/app/GlobalRedux/reducer/ArrSlice";
-import { GlobalSvgSelector } from "../lastFiles/GlobalSvgSel";
+import { GlobalSvgSelector } from "@/app/GlobalSvgSel";
 import { useState } from "react";
 
 export const MyFile = () => {
@@ -144,7 +144,7 @@ export const MyFile = () => {
               </div>
               <div className={stylesCardLast.renameCard}>Переименовать</div>
               <div className={stylesCardLast.download}>Скачать</div>
-              <div className={stylesCardLast.info}>Информация</div>
+              <div className={stylesCardLast.info}>asdasd</div>
             </div>
           </div>
         </div>
