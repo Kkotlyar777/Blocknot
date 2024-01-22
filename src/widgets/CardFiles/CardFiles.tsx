@@ -14,10 +14,10 @@ export const CardFiles = () => {
       <div
         className={stylesCard.CardCont}
         onClick={() => {
-          dispatch(SetName());
+          dispatch(SetName(1));
           currentInput !== ""
-            ? dispatch(AddInput(""))
-            : dispatch(AddInput(currentInput));
+            ? dispatch(AddInput(currentInput))
+            : dispatch(AddInput(""));
         }}
       >
         <div className={stylesCard.upCont}>
@@ -36,15 +36,17 @@ export const CardFiles = () => {
             </svg>
           </div>
           <div className={stylesCard.Contdoc}>
-            <div className={stylesCard.txt}></div>
+            <div className={stylesCard.Maintxt}></div>
             {ArrCards[ArrCards.length - 1].name === "" &&
             ArrCards[ArrCards.length - 1].id === Prpops.id ? (
               <input
                 type="text"
-                className={stylesCard.txt}
+                className={stylesCard.Maintxt}
                 onChange={(e) => dispatch(AddInput(e.target.value))}
                 onKeyDown={(e) => e.key === "Enter" && dispatch(SetName())}
                 onClick={(e) => e.stopPropagation()}
+                placeholder="Название"
+                
               />
             ) : (
               Prpops.name
