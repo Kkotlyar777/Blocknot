@@ -18,7 +18,7 @@ export const MyFile = () => {
 
   const changeColor = (el) => {
     if (el === "application") {
-      return { background: "#ACCCFF" };
+      return { background: "#D3D2FF" };
     }
     if (el === "image") {
       return { background: "#FFE5CD" };

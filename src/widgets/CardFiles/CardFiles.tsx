@@ -9,14 +9,12 @@ export const CardFiles = () => {
   const { AddInput, SetName } = ArrSlice.actions;
   const dispatch = useAppDispatch();
 
-  const addInputs = () => {}
-
   return ArrCards.map((Prpops: any) => {
     return (
       <div
         className={stylesCard.CardCont}
         onClick={() => {
-          dispatch(SetName());
+          dispatch(SetName(1));
           currentInput !== ""
             ? dispatch(AddInput(currentInput))
             : dispatch(AddInput(""));
