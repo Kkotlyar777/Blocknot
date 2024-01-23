@@ -8,10 +8,16 @@ import { useState } from "react";
 
 export const MyFile = () => {
   //-------------------------------------------------
-  const { arrAll, currentFile, currentPop } = useAppSelector(
-    (state) => state.ArrSlice
-  );
-  const { SetCurrentFile, SetCurrentPop, DelCurrentFile } = ArrSlice.actions;
+  const { arrAll, currentFile, currentPop, currentNameFile, NameValue } =
+    useAppSelector((state) => state.ArrSlice);
+  const {
+    SetCurrentFile,
+    SetCurrentPop,
+    DelCurrentFile,
+
+    setNameValue,
+    isReneme,
+  } = ArrSlice.actions;
   const dispatch = useAppDispatch();
   const [currentHovermodalt, setCurrentHovermodal] = useState();
 
@@ -49,7 +55,26 @@ export const MyFile = () => {
           >
             <GlobalSvgSelector id={Prpops.type.split("/")[0]} />
           </div>
-          <span className={stylesCardLast.fileName}>{Prpops.name}</span>
+          <span className={stylesCardLast.fileName}>
+            {currentNameFile === Prpops.id ? (
+              <input
+                onKeyDown={(e) => {
+                  if (e.key === "Enter") {
+                    dispatch(
+                      setNameValue({
+                        value: e.currentTarget.value,
+                        id: Prpops.id,
+                      })
+                    );
+                    dispatch(isReneme(NaN));
+                    e.preventDefault();
+                  }
+                }}
+              />
+            ) : (
+              Prpops.name
+            )}
+          </span>
         </div>
         <div className={stylesCardLast.ShareImg}>
           <img
@@ -182,6 +207,9 @@ export const MyFile = () => {
                 }}
                 onMouseLeave={(e) => {
                   setCurrentHovermodal(false);
+                }}
+                onClick={() => {
+                  dispatch(isReneme(Prpops.id));
                 }}
               >
                 <div

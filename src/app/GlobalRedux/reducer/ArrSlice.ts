@@ -115,17 +115,28 @@ const initialState = {
     },
   ],
   currentInput: "",
+  currentNameFile: NaN,
+  NameValue: "",
 };
 
 export const ArrSlice = createSlice({
   name: "ArrStates",
   initialState,
   reducers: {
+    isReneme(state, action) {
+      state.currentNameFile = action.payload;
+    },
+    setNameValue(state, action) {
+      state.NameValue = action.payload.value;
+      state.arrAll.map((el) => {
+        if (el.id === action.payload.id) {
+          state.currentNameFile = el.id;
+          el.name = state.NameValue;
+        }
+      });
+    },
     addArrEl(state, action) {
-      // state.arrAll = action.payload.concat(state.arrAll);
       state.arrAll = [...action.payload, ...state.arrAll];
-      console.log(state.arrAll);
-      
     },
     SetCurrentFile(state, action) {
       state.currentFile = action.payload;
