@@ -14,7 +14,7 @@ export const CardFiles = () => {
 
 	return ArrCards.map((Prpops: any) => {
 		return (
-			<Link href={`/Folder`} style={{textDecoration: 'none'}} onClick={() => dispatch(SetFolderId(Prpops.name))}>
+			<Link href={`/Folder`} style={{textDecoration: 'none'}} onClick={() => dispatch(SetFolderId(Prpops.name))} key={Prpops.id}>
 				<div
 					className={stylesCard.CardCont}
 					onClick={() => {

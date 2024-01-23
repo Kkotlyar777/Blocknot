@@ -12,14 +12,14 @@ export const files = () => {
   const dispatch = useAppDispatch();
   const [dragActive, setDragActive] = useState(false);
 
-  const handlerChange = (e) => {
+  const handlerChange = (e:any) => {
     e.preventDefault();
     if (e.target.files && e.target.files[0]) {
       dispatch(addArrEl(e.target.files));
     }
   };
 
-  const handlerDragChange = (e) => {
+  const handlerDragChange = (e:any) => {
     e.preventDefault();
     if (e.dataTransfer.files && e.dataTransfer.files[0]) {
       dispatch(addArrEl(e.dataTransfer.files));
@@ -27,12 +27,12 @@ export const files = () => {
     setDragActive(false);
   };
 
-  const SetDragEnter = (e) => {
+  const SetDragEnter = (e:any) => {
     e.preventDefault();
     setDragActive(true);
   };
 
-  const SetDragOver = (e) => {
+  const SetDragOver = (e:any) => {
     e.preventDefault();
     setDragActive(false);
   };
