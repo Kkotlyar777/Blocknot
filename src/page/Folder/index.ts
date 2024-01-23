@@ -1,2 +1,2 @@
-import { folder } from "@/page/Folder/page";
-export default folder;
+import { Folder } from "@/page/Folder/page";
+export default Folder;

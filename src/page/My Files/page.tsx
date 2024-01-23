@@ -6,7 +6,7 @@ import { useAppDispatch, useAppSelector } from "@/features/hooks/redux";
 import { ArrSlice } from "@/app/GlobalRedux/reducer/ArrSlice";
 import MyFile from "@/widgets/МуFiles/index";
 
-export const files = () => {
+export const Files = () => {
   const { arrAll, currentFile } = useAppSelector((state) => state.ArrSlice);
   const { addArrEl, DelCurrentFile, SetCurrentPop } = ArrSlice.actions;
   const dispatch = useAppDispatch();

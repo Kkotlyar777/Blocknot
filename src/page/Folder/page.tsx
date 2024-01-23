@@ -7,7 +7,7 @@ import { ArrSlice } from "@/app/GlobalRedux/reducer/ArrSlice";
 import MyFile from "@/widgets/МуFiles/index";
 import Link from "next/link";
 
-export const folder = () => {
+export const Folder = () => {
   const { arrAll, currentFile, FolderID } = useAppSelector((state) => state.ArrSlice);
   const { addArrEl, DelCurrentFile, SetCurrentPop } = ArrSlice.actions;
   const dispatch = useAppDispatch();
