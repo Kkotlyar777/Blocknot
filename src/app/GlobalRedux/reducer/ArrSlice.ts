@@ -115,6 +115,7 @@ const initialState = {
     },
   ],
   currentInput: "",
+  FolderID: NaN,
 };
 
 export const ArrSlice = createSlice({
@@ -122,10 +123,7 @@ export const ArrSlice = createSlice({
   initialState,
   reducers: {
     addArrEl(state, action) {
-      // state.arrAll = action.payload.concat(state.arrAll);
       state.arrAll = [...action.payload, ...state.arrAll];
-      console.log(state.arrAll);
-      
     },
     SetCurrentFile(state, action) {
       state.currentFile = action.payload;
@@ -139,7 +137,7 @@ export const ArrSlice = createSlice({
           state.arrAll.splice(ind, 1);
         }
       });
-    },
+    },  
     AddCard(state, action) {
       state.ArrCards = [
         ...state.ArrCards,
@@ -157,6 +155,9 @@ export const ArrSlice = createSlice({
     },
     SetName(state, action) {
       state.ArrCards[state.ArrCards.length - 1].name = state.currentInput;
+    },
+    SetFolderId(state, action) {
+      state.FolderID = action.payload;
     },
   },
 });
