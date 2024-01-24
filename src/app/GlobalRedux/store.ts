@@ -3,9 +3,11 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import userReducer from "./reducer/SideBarSlice";
 import ArrSlice from "./reducer/ArrSlice";
+import MyFilesSlice from "./reducer/MyFilesSlice";
 const rootReduser = combineReducers({
   userReducer,
   ArrSlice,
+  MyFilesSlice,
 });
 
 export const setupStore = () => {

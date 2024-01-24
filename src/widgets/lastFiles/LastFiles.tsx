@@ -9,7 +9,7 @@ import { useState } from "react";
 export const LastFile = () => {
   //-------------------------------------------------
   const { arrAll, currentFile } = useAppSelector((state) => state.ArrSlice);
-  const { SetCurrentFile } = ArrSlice.actions;
+
   const dispatch = useAppDispatch();
 
   //----------------------------
@@ -18,9 +18,6 @@ export const LastFile = () => {
       <div
         className={stylesCardLast.LastFile}
         key={Prpops.id}
-        onClick={() => {
-          dispatch(SetCurrentFile(Prpops.id));
-        }}
         style={currentFile === Prpops.id ? { background: "#b5cafc" } : {}}
       >
         <div className={stylesCardLast.lastFileName}>

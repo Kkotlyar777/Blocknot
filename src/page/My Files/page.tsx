@@ -5,11 +5,15 @@ import styles from "./allFiles.module.sass";
 import { useAppDispatch, useAppSelector } from "@/features/hooks/redux";
 import { ArrSlice } from "@/app/GlobalRedux/reducer/ArrSlice";
 import MyFile from "@/widgets/МуFiles/index";
+import { MyFilesSlice } from "@/app/GlobalRedux/reducer/MyFilesSlice";
 
 export const files = () => {
-  const { arrAll, currentFile } = useAppSelector((state) => state.ArrSlice);
-  const { addArrEl, DelCurrentFile, SetCurrentPop } = ArrSlice.actions;
+  const { arrAll } = useAppSelector((state) => state.MyFilesSlice);
+
+  const { DelCurrentFile, isVisibles, addArrEl } = MyFilesSlice.actions;
+
   const dispatch = useAppDispatch();
+
   const [dragActive, setDragActive] = useState(false);
 
   const handlerChange = (e) => {
@@ -41,7 +45,7 @@ export const files = () => {
     <div
       className={styles.mainCont}
       onClick={(e) => {
-        dispatch(SetCurrentPop(false));
+        dispatch(isVisibles(false));
       }}
     >
       <div className={styles.upCont}>
@@ -63,7 +67,7 @@ export const files = () => {
         <button
           className={styles.mainBtn}
           onClick={() => {
-            dispatch(DelCurrentFile(currentFile));
+            dispatch(DelCurrentFile());
           }}
         >
           удалить
