@@ -30,7 +30,7 @@ export function selected() {
       <div className={styles.CardCont}>
         {ArrCard.map((Prpops: any) => {
           return (
-            <div className={styles.CardMain}>
+            <div className={styles.CardMain} key={Prpops.id}>
               <div className={styles.svgBlock}>
                 <svg
                   width="18"
