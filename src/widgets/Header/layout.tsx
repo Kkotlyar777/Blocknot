@@ -1,14 +1,16 @@
-// "use client";
+"use client";
 
+import { useAppSelector } from "@/features/hooks/redux";
 import styles from "./header.module.sass";
-// import { useAppSelector } from '../../hooks/redux';
+import { useState } from "react";
 
 export function HeaderLayout() {
-  // const { numPage } = useAppSelector((state) => state.userReducer);
+  const { numPage } = useAppSelector((state) => state.userReducer);
+  const [isOpen, setOpen] = useState(false);
   return (
     <div
       className={styles.header}
-      // style={numPage === 4 ? { width: '80%' } : { width: '99%' }}
+      style={numPage === 4 ? { width: "80%" } : { width: "99%" }}
     >
       <div className={styles.cont}>
         <div className={styles.mainTitle}>Мой Блокнот</div>
@@ -18,47 +20,101 @@ export function HeaderLayout() {
           <img src="./search.png" alt="search" />
           <input type="search" placeholder="Найти что угодно здесь" />
         </div>
-        <button className={styles.headerBtn}>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="25"
-            height="25"
-            viewBox="0 0 14 14"
-            fill="#051F61"
+
+        <div className={styles.contBtn2}>
+          {isOpen ? (
+            <div className={styles.notification}>
+              <div className={styles.card}>
+                <div className={styles.logo}>
+                  <img
+                    src="./Logo.png"
+                    alt=""
+                    style={{ width: "80%", height: "80%" }}
+                  />
+                </div>
+                <div className={styles.text}>Вы удалили файл pages.txt</div>
+                <input type="radio" className={styles.btn} />
+              </div>
+
+              <div className={styles.card}>
+                <div className={styles.logo}>
+                  <img
+                    src="./Logo.png"
+                    alt=""
+                    style={{ width: "80%", height: "80%" }}
+                  />
+                </div>
+                <div className={styles.text}>Вы удалили файл pages.txt</div>
+                <input type="radio" className={styles.btn} />
+              </div>
+              <div className={styles.card}>
+                <div className={styles.logo}>
+                  <img
+                    src="./Logo.png"
+                    alt=""
+                    style={{ width: "80%", height: "80%" }}
+                  />
+                </div>
+                <div className={styles.text}>Вы удалили файл pages.txt</div>
+                <input type="radio" className={styles.btn} />
+              </div>
+            </div>
+          ) : (
+            <></>
+          )}
+          <button
+            style={{ marginLeft: "20px" }}
+            className={styles.headerBtn}
+            onClick={() => {
+              if (isOpen) {
+                setOpen(false);
+              } else {
+                setOpen(true);
+              }
+            }}
           >
-            <g clip-path="url(#clip0_1222_37757)">
-              <path
-                d="M6 13.25H8"
-                stroke="#051F61"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <path
-                d="M11 5.75C11 4.68913 10.5786 3.67172 9.82843 2.92157C9.07828 2.17143 8.06087 1.75 7 1.75C5.93913 1.75 4.92172 2.17143 4.17157 2.92157C3.42143 3.67172 3 4.68913 3 5.75V9.25C3 9.64782 2.84196 10.0294 2.56066 10.3107C2.27936 10.592 1.89782 10.75 1.5 10.75H12.5C12.1022 10.75 11.7206 10.592 11.4393 10.3107C11.158 10.0294 11 9.64782 11 9.25V5.75Z"
-                stroke="#051F61"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <path
-                d="M0.5 5.62C0.500539 4.66814 0.727534 3.73007 1.16224 2.88327C1.59694 2.03647 2.22687 1.30525 3 0.75"
-                stroke="#051F61"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <path
-                d="M13.5 5.62C13.4995 4.66814 13.2725 3.73007 12.8378 2.88327C12.4031 2.03647 11.7731 1.30525 11 0.75"
-                stroke="#051F61"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </g>
-            <defs>
-              <clipPath id="clip0_1222_37757">
-                <rect width="14" height="14" fill="#051F61" />
-              </clipPath>
-            </defs>
-          </svg>
-        </button>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="25"
+              height="25"
+              viewBox="0 0 14 14"
+              fill="#051F61"
+            >
+              <g clip-path="url(#clip0_1222_37757)">
+                <path
+                  d="M6 13.25H8"
+                  stroke="#051F61"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M11 5.75C11 4.68913 10.5786 3.67172 9.82843 2.92157C9.07828 2.17143 8.06087 1.75 7 1.75C5.93913 1.75 4.92172 2.17143 4.17157 2.92157C3.42143 3.67172 3 4.68913 3 5.75V9.25C3 9.64782 2.84196 10.0294 2.56066 10.3107C2.27936 10.592 1.89782 10.75 1.5 10.75H12.5C12.1022 10.75 11.7206 10.592 11.4393 10.3107C11.158 10.0294 11 9.64782 11 9.25V5.75Z"
+                  stroke="#051F61"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M0.5 5.62C0.500539 4.66814 0.727534 3.73007 1.16224 2.88327C1.59694 2.03647 2.22687 1.30525 3 0.75"
+                  stroke="#051F61"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M13.5 5.62C13.4995 4.66814 13.2725 3.73007 12.8378 2.88327C12.4031 2.03647 11.7731 1.30525 11 0.75"
+                  stroke="#051F61"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </g>
+              <defs>
+                <clipPath id="clip0_1222_37757">
+                  <rect width="14" height="14" fill="#051F61" />
+                </clipPath>
+              </defs>
+            </svg>
+          </button>
+        </div>
+
         <button className={styles.headerBtn}>
           <svg
             xmlns="http://www.w3.org/2000/svg"

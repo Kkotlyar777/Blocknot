@@ -5,21 +5,25 @@ import styles from "./allFiles.module.sass";
 import { useAppDispatch, useAppSelector } from "@/features/hooks/redux";
 import { ArrSlice } from "@/app/GlobalRedux/reducer/ArrSlice";
 import MyFile from "@/widgets/МуFiles/index";
+import { MyFilesSlice } from "@/app/GlobalRedux/reducer/MyFilesSlice";
 
-export const Files = () => {
-  const { arrAll, currentFile } = useAppSelector((state) => state.ArrSlice);
-  const { addArrEl, DelCurrentFile, SetCurrentPop } = ArrSlice.actions;
+export const files = () => {
+  const { arrAll } = useAppSelector((state) => state.MyFilesSlice);
+
+  const { DelCurrentFile, isVisibles, addArrEl } = MyFilesSlice.actions;
+
   const dispatch = useAppDispatch();
+
   const [dragActive, setDragActive] = useState(false);
 
-  const handlerChange = (e:any) => {
+  const handlerChange = (e: any) => {
     e.preventDefault();
     if (e.target.files && e.target.files[0]) {
       dispatch(addArrEl(e.target.files));
     }
   };
 
-  const handlerDragChange = (e:any) => {
+  const handlerDragChange = (e: any) => {
     e.preventDefault();
     if (e.dataTransfer.files && e.dataTransfer.files[0]) {
       dispatch(addArrEl(e.dataTransfer.files));
@@ -27,12 +31,12 @@ export const Files = () => {
     setDragActive(false);
   };
 
-  const SetDragEnter = (e:any) => {
+  const SetDragEnter = (e: any) => {
     e.preventDefault();
     setDragActive(true);
   };
 
-  const SetDragOver = (e:any) => {
+  const SetDragOver = (e: any) => {
     e.preventDefault();
     setDragActive(false);
   };
@@ -41,7 +45,7 @@ export const Files = () => {
     <div
       className={styles.mainCont}
       onClick={(e) => {
-        dispatch(SetCurrentPop(false));
+        dispatch(isVisibles(false));
       }}
     >
       <div className={styles.upCont}>
@@ -63,7 +67,7 @@ export const Files = () => {
         <button
           className={styles.mainBtn}
           onClick={() => {
-            dispatch(DelCurrentFile(currentFile));
+            dispatch(DelCurrentFile());
           }}
         >
           удалить
