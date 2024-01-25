@@ -9,7 +9,7 @@ export default function Home() {
     <div className={styles.MainCont}>
       <div className={styles.topBlock}>
         <div className={styles.Text}>
-          <div className={styles.textOne}>Все файлы</div>
+          <div className={styles.textOne}>Все папки</div>
           <div className={styles.textCont}>
             <div className={styles.textTwo}>Добро пожаловать, Михаил! 👋 </div>
           </div>

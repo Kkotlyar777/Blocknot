@@ -88,6 +88,9 @@ const initialState: ModalMenu = {
   currentFileId: NaN,
   NameValue: "",
   currentNameFile: NaN,
+  // поиск
+  currentSearchInput: '',
+  SearchArr: [],
 };
 
 export const MyFilesSlice = createSlice({
@@ -127,6 +130,13 @@ export const MyFilesSlice = createSlice({
     },
     isReneme(state, action) {
       state.currentNameFile = action.payload;
+    },
+    // Поиск
+    SetInputValue(state, action) {
+      state.currentSearchInput = action.payload;
+    },
+    Searching(state, action) {
+      state.SearchArr = state.arrAll.filter((obj) => obj.name.includes(action.payload))
     },
   },
 });

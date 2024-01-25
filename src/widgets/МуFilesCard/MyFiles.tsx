@@ -59,6 +59,8 @@ export const MyFile = () => {
           <span className={stylesCardLast.fileName}>
             {currentNameFile === Prpops.id ? (
               <input
+              className={stylesCardLast.renameInput}
+              placeholder="Введите новое название"
                 onKeyDown={(e) => {
                   if (e.key === "Enter") {
                     dispatch(

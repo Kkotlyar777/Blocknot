@@ -8,7 +8,6 @@
     margin-right: 63px
     margin-bottom: 50px
 
-
 .cont
     display: flex
     justify-content: flex-start
@@ -28,15 +27,40 @@
     padding: 8px 16px
     background: #fff
     border-radius: 8px
+    transition: 5s
+    z-index: 10
+    filter: drop-shadow(0px 2px 30px rgba(0, 0, 0, 0.1))
     input
         width: 304px
         height: 24px
         border: none
+        outline: none
+        &:focus
+            border-bottom: 1px #757897 solid
     img
         width: 24px
         height: 24px
-        margin-right: 16px 
+        margin-right: 16px
         border-radius: 8px
+
+.searchList
+    display: flex
+    flex-direction: column
+    height: 200px
+    width: 376px
+    gap: 15px
+    background: #fff
+    z-index: 10
+    overflow: auto
+    align-items: center
+    margin-top: -5px
+    border-radius: 5px
+    padding-top: 15px
+
+.searchField
+    display: flex
+    flex-direction: column
+    height: 240px
 
 .headerBtn
     border-radius: 8px
@@ -46,6 +70,7 @@
     height: 45px
     flex-shrink: 0
     margin: 0
+    cursor: pointer
 
 .btns
     display: flex
@@ -61,67 +86,34 @@
     margin: 0
     padding: 0
 
-        
-
-
-
 .contBtn2
     display: flex
 
-
 .notification
     flex-shrink: 0
-    width: 332px
-    height: 280px
-    background-color:#FFF
+    width: 400px
+    height: 245px
+    background-color: #FFF
     overflow: auto
     display: flex
     flex-direction: column
     justify-content: flex-start
     align-items: center
-    border-radius: 5px
+    border-radius: 10px
     filter: drop-shadow(0px 2px 30px rgba(0, 0, 0, 0.1))
-    .card
-        width: 286px
-        height: 45px
-        margin-top: 12px
-        flex-shrink: 0
-        background-color:#FFF
-        border-radius: 5px
-        background: #E6E6E6 
-        display: flex
-        justify-content: flex-start
-        align-items: center
-        padding: 10px 16px 10px 5px
-        .logo
-            width: 37px
-            height: 37px
-            flex-shrink: 0
-            border-radius: 5px
-            background: #FFF
-            margin-right: 12px
-            display: flex
-            justify-content: center
-            align-items: center
-            img
-                
-        .text
-            width: 174px
-            height: 37px
-            flex-shrink: 0 
-            color: #696A75
-            font-size: 14px
-            font-style: norma
-            font-weight: 400
-            line-height: normal
-            margin-right: 26px
-        .btn
-            width: 22px
-            height: 22px
+    animation: NotInOut 5s
 
+// @keyframes NotInOut
+//     from
+//         position: absolute
+//         top: -100px
+//         right: 220px
+//     to
+//         top: 100px
 
-
-
-
-
-    
+// @keyframes searchInOut
+//     from
+//         right: 300px
+//         position: absolute
+//     to
+//         right: 800px
