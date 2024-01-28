@@ -12,7 +12,7 @@ export const MyFile = () => {
   const dispatch = useAppDispatch();
 
   // для модального окна
-  const { arrAll, hoverElement, currentFileId, currentNameFile, isVisible } =
+  const { arrAll, ArrCards, hoverElement, currentFileId, currentNameFile, isVisible } =
     useAppSelector((state) => state.MyFilesSlice);
   const {
     ModalMenus,
@@ -21,6 +21,7 @@ export const MyFile = () => {
     setNameValue,
     isReneme,
     isVisibles,
+    AddFileSelected,
   } = MyFilesSlice.actions;
   //-------------------------------------------------
 
@@ -37,9 +38,12 @@ export const MyFile = () => {
     if (el === "video") {
       return { background: "#F1CDFF" };
     }
+    if (el === 'folder') {
+      return { background: 'rgba(0, 97, 255, 0.1)' };
+    }
   };
 
-  return arrAll.map((Prpops: any) => {
+  return [...ArrCards, ...arrAll].map((Prpops: any) => {
     return (
       <div
         className={stylesCardLast.LastFile}
@@ -305,6 +309,9 @@ export const MyFile = () => {
               </li>
               <li
                 className={stylesCardLast.info}
+                onClick={()=>{
+                  dispatch(AddFileSelected());
+                }}
                 onMouseEnter={(e) => {
                   dispatch(ModalMenus(4));
                 }}

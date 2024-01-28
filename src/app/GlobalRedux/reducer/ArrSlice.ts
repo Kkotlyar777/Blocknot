@@ -15,7 +15,7 @@ interface Cards {
 	arrAll: CardMain[];
 	currentInput: string;
 	NameValue: string;
-	FolderID: number;
+	FolderID: number; 
 }
 
 const initialState: Cards = {
@@ -107,6 +107,7 @@ const initialState: Cards = {
 		{ name: 'Вы удалили файл pages.txt', id: 4 },
 	],
 	currentFileId: NaN,
+
 };
 
 export const ArrSlice = createSlice({

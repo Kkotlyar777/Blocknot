@@ -8,9 +8,11 @@ import MyFile from '@/widgets/МуFilesCard/index';
 import { MyFilesSlice } from '@/app/GlobalRedux/reducer/MyFilesSlice';
 
 export const files = () => {
-	const { arrAll } = useAppSelector((state) => state.MyFilesSlice);
+	const { arrAll, FoldersMyFiles, ArrCards, ArrSelected, currentFileId } = useAppSelector((state) => state.MyFilesSlice);
 
-	const { DelCurrentFile, isVisibles, addArrEl } = MyFilesSlice.actions;
+	const { DelCurrentFile, isVisibles, addArrEl, AddFolder } = MyFilesSlice.actions;
+
+	// const { AddCard } = ArrSlice.actions
 
 	const dispatch = useAppDispatch();
 
@@ -64,6 +66,14 @@ export const files = () => {
 						onChange={handlerChange}
 					/>
 				</label>
+				<button
+					className={styles.BtnAddFolder}
+					onClick={() => {
+						dispatch(AddFolder());
+					}}
+				>
+					Добавить папку
+				</button>
 				<button
 					className={styles.mainBtn}
 					onClick={() => {
@@ -172,7 +182,7 @@ export const files = () => {
 				onDragLeave={SetDragOver}
 			>
 				<div className={styles.DragDrops}>
-					{arrAll.length > 0 ? (
+					{[...ArrCards, ...arrAll].length > 0 ? (
 						<MyFile />
 					) : (
 						<>
