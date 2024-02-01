@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 // styles
 import styles from './header.module.sass';
