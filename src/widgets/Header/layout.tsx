@@ -6,11 +6,13 @@ import styles from './header.module.sass';
 import Notification from '@/widgets/Notifications/index';
 import Search from '@/widgets/Search/index';
 import PopUp from '@/widgets/SupportPopUp/index';
+import { Profile } from "../Profile";
 // Redux
 import { useState } from 'react';
 import { useAppDispatch } from '@/features/hooks/redux';
 import { MyFilesSlice } from '@/app/GlobalRedux/reducer/MyFilesSlice';
 import { useAppSelector } from '@/features/hooks/redux';
+
 
 export function HeaderLayout() {
 	// Redux
@@ -18,6 +20,7 @@ export function HeaderLayout() {
 	const [isOpen, setOpen] = useState(false);
 	const [isSearch, setSearch] = useState(false);
 	const [supOpen, setSupOpen] = useState(false);
+	const [isProfile, setIsProfile] = useState(true);
 	const dispatch = useAppDispatch();
 	const { currentSearchInput } = useAppSelector((state) => state.MyFilesSlice);
 	const { SetInputValue, Searching } = MyFilesSlice.actions;
