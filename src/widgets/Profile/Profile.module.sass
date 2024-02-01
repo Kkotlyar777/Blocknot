@@ -1,16 +1,22 @@
 .Profile
-    width: 360px
-    height: 370px
     display: flex
     flex-direction: column
     justify-content: flex-start
     align-items: flex-start
-    padding: 20px 20px 10px 20px
-
-
+    padding: 10px 20px 20px 20px
+    position: relative
+    top: 20px
+    right: 320px
+    flex-shrink: 0
+    width: 324px
+    height: 350px
+    background-color: #FFF
+    border-radius: 10px 0px 10px 10px
+    filter: drop-shadow(0px 2px 30px rgba(0, 0, 0, 0.1))
+    cursor: auto
 
 .Main
-    width: 240px
+    width: 300px
     height: 50px
     margin-bottom: 10px
     display: flex
@@ -18,9 +24,12 @@
     align-items: center
     svg
         margin-right: 30px
+        display: flex
+        align-self: center
     .cont
         display: flex
         flex-direction: column
+        justify-content: center
         width: 190px
         height: 50px
         .el1
@@ -39,8 +48,6 @@
             letter-spacing: 0%
             text-align: left
 
-
-
 .Tarif
     width: 240px
     height: 50px
@@ -49,12 +56,12 @@
     flex-direction: column
     .el1
         color: rgb(112, 112, 112)
-        font-size: 14px
+        font-size: 13px
         font-weight: 400
         line-height: 12px
         letter-spacing: 0%
         text-align: left
-        margin-bottom: 10px
+        margin-bottom: 14px
     .chose
         color: rgb(0, 0, 0)
         font-size: 14px
@@ -63,15 +70,16 @@
         letter-spacing: 0%
         text-align: left
         text-decoration-line: underline
-
-
-
+        margin-bottom: 10px
+        cursor: pointer
 
 .line
-    border: 1px solid rgb(190, 190, 190)
+    height: 1px
     width: 309px
-    margin-bottom: 10px
-
+    margin-bottom: 20px
+    background: #BEBEBE
+    display: flex
+    flex-shrink: 0
 
 .cont
     width: 240px
@@ -91,7 +99,7 @@
         align-items: center
         width: 240px
         height: 35px
-
+        cursor: pointer
         margin-bottom: 5px
     .theme
         display: flex
@@ -99,21 +107,29 @@
         height: 35px
         align-items: center
         margin-bottom: 5px
+        cursor: pointer
     .langth
         display: flex
         width: 240px
         height: 35px
         align-items: center
         margin-bottom: 5px
+        cursor: pointer
     .options
         display: flex
         width: 240px
         height: 35px
         align-items: center
         margin-bottom: 5px
+        cursor: pointer
+        svg
+            margin-right: 11px
     .exit
         display: flex
         width: 240px
         height: 35px
         align-items: center
         margin-bottom: 5px
+        cursor: pointer
+        svg
+            margin-right: 11px

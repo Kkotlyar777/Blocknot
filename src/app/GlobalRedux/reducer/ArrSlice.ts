@@ -107,7 +107,7 @@ const initialState: Cards = {
 		{ name: 'Вы удалили файл pages.txt', id: 4 },
 	],
 	currentFileId: NaN,
-
+	setSupOpen: false,
 };
 
 export const ArrSlice = createSlice({
@@ -144,6 +144,10 @@ export const ArrSlice = createSlice({
 		},
 		CurrentElement(state, action) {
 			state.currentFileId = action.payload;
+		},
+		//открытие окна поддержки
+		SupWnd(state, action) {
+			state.setSupOpen = action.payload;
 		},
 	},
 });

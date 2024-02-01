@@ -1,2 +1,2 @@
-import { files } from "@/page/My Files/page";
-export default files;
+import { prices } from "@/page/Prices/My Files/page";
+export default prices;

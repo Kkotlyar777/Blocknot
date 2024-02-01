@@ -11,7 +11,6 @@
     bottom: 20px
     right: 29px
     animation: InOut 1s
-    animation-direction: normal, reverse
 
 .mainChat
     width: 100%
@@ -43,9 +42,14 @@
 .SvgCont
     width: 100%
     display: flex
-    justify-content: flex-end
+    justify-content: space-between
     margin-top: 13px
     margin-bottom: 25px
+    div
+        display: flex
+        gap: 10px
+        align-items: center
+        margin-left: 23px
 
 .msg1
     width: 304px
@@ -88,3 +92,9 @@
         right: -400px
     to
         right: 29px
+
+// @keyframes OutIn
+//     from
+//         right: 29px
+//     to
+//         right: -400px

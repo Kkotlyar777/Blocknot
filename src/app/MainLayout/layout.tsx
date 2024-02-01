@@ -37,12 +37,12 @@ export function RootLayout({ children }: { children: React.ReactNode }) {
         className={lato.className}
       >
         <Provid>
-          <SidebarLayout />
+          {/* <SidebarLayout /> */}
 
-          <div>
-            <HeaderLayout />
+          {/* <div> */}
+            {/* <HeaderLayout /> */}
             {children}
-          </div>
+          {/* </div> */}
         </Provid>
       </body>
     </html>

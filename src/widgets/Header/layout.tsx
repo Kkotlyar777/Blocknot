@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 // styles
 import styles from './header.module.sass';
@@ -6,33 +6,41 @@ import styles from './header.module.sass';
 import Notification from '@/widgets/Notifications/index';
 import Search from '@/widgets/Search/index';
 import PopUp from '@/widgets/SupportPopUp/index';
-import { Profile } from "../Profile";
+import { Profile } from '../Profile';
 // Redux
 import { useState } from 'react';
 import { useAppDispatch } from '@/features/hooks/redux';
 import { MyFilesSlice } from '@/app/GlobalRedux/reducer/MyFilesSlice';
 import { useAppSelector } from '@/features/hooks/redux';
-
+import { ArrSlice } from '@/app/GlobalRedux/reducer/ArrSlice';
 
 export function HeaderLayout() {
 	// Redux
 	const { numPage } = useAppSelector((state) => state.userReducer);
 	const [isOpen, setOpen] = useState(false);
 	const [isSearch, setSearch] = useState(false);
-	const [supOpen, setSupOpen] = useState(false);
-	const [isProfile, setIsProfile] = useState(true);
+	// const [supOpen, setSupOpen] = useState(false);
+	const [isProfile, setIsProfile] = useState(false);
 	const dispatch = useAppDispatch();
 	const { currentSearchInput } = useAppSelector((state) => state.MyFilesSlice);
 	const { SetInputValue, Searching } = MyFilesSlice.actions;
+	const { SupWnd } = ArrSlice.actions;
+	const { setSupOpen } = useAppSelector((state) => state.ArrSlice);
 	//===============================================================
 	return (
 		<div
 			className={styles.header}
-			style={numPage === 4 ? { width: '80%' } : { width: '99%' }}
 			onClick={() => {
 				setSearch(false), setOpen(false);
 			}}
-			onKeyDown={(e) => e.key === 'Escape' && setSearch(false)}
+			onKeyDown={(e) => {
+				if (e.key === 'Escape') {
+					setSearch(false);
+					dispatch(SupWnd(false));
+					setOpen(false);
+					setIsProfile(false);
+				}
+			}}
 		>
 			<div className={styles.cont}>
 				<div className={styles.mainTitle}>Мой Блокнот</div>
@@ -131,11 +139,11 @@ export function HeaderLayout() {
 
 				<button
 					className={styles.headerBtn}
-					onClick={() => {
-						if (supOpen) {
-							setSupOpen(false);
+					onClick={(e) => {
+						if (setSupOpen) {
+							dispatch(SupWnd(false));
 						} else {
-							setSupOpen(true);
+							dispatch(SupWnd(true));
 						}
 					}}
 				>
@@ -155,13 +163,24 @@ export function HeaderLayout() {
 						/>
 					</svg>
 				</button>
-				{supOpen ? <PopUp /> : <></>}
-				<button className={styles.headerBtnProfile}>
+				{setSupOpen ? <PopUp /> : <></>}
+				<button
+					className={styles.headerBtnProfile}
+					onClick={(e) => {
+						e.stopPropagation();
+						if (isProfile) {
+							setIsProfile(false);
+						} else {
+							setIsProfile(true);
+						}
+					}}
+				>
 					<img
 						src="./profile.jpg"
 						alt="profile photo"
 						style={{ width: '100%', height: '100%', borderRadius: '8px' }}
 					/>
+					{isProfile ? <Profile /> : <></>}
 				</button>
 			</div>
 		</div>

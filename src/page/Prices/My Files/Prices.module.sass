@@ -1,111 +1,92 @@
-@import ../../app/MainLayout/globals
-.upCont
+@import ../../../app/MainLayout/globals
+
+.mainImg
+    margin-top: 25px
+    margin-left: 33px
+
+.mainPrices
+    width: 1920px
     display: flex
-    width: calc(100vw - 352px)
-    height: 40px
-    align-items: center
-    margin-bottom: 60px
-
-.h2
-    color: $color-dark-blue
-    font-size: 26px
-    font-style: normal
-    font-weight: 400
-    line-height: normal
-    margin: 0
-
-.BtnAddFolder
-    @include main-button($color-light-blue)
-    padding: 0px 20px
-    color: $color-main-blue
-    font-weight: 700
-    font-size: 14px
-    margin-right: 30px
-    flex-shrink: 0
-    width: 180px
-
-.conth2
-    display: flex
-    flex-shrink: 1
-    min-width: 234px
-    justify-content: flex-start
-    width: 100%
-
-.FilesPath
-    font-size: 24px
-    color: $color-main-gray
-    margin-right: 30%
-    flex-shrink: 0
-
-.mainBtn
-    @include main-button($color-light-blue)
-    padding: 5px 20px
-    color: $color-main-blue
-    font-weight: 700
-    font-size: 14px
-    margin-right: 30px
-    flex-shrink: 0
-    display: flex
+    gap: 80px
     justify-content: center
-    align-items: center
+    height: 100vh
+    padding-top: 50px
 
-.mainBtn1
-    @include main-button($color-light-blue)
-    padding: 0 20px
-    color: $color-main-blue
-    font-weight: 700
-    font-size: 14px
-    margin-right: 30px
-    flex-shrink: 0
-
-.FiltersCont
+.AllIn
+    width: 350px
+    height: 635px
     display: flex
-    flex-direction: row
-    width: 90%
-    justify-content: space-between
-    align-items: center
-    height: 70px
+    flex-direction: column
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.25)
+    border-radius: 20px
+    h2
+        font-size: 20px
+        font-weight: bold
+        align-self: center
+        margin-top: 25px
+        margin-bottom: 70px
 
-.Filters
+.mainList
     display: flex
-    flex-direction: row
-    width: 95%
-    justify-content: space-between
-    align-items: center
-    height: 70px
+    flex-direction: column
+    gap: 15px
+    width: 100%
+    padding: 0
+    margin-bottom: 55px
     li
         display: flex
-        text-decoration: none
-        list-style-type: none
-        gap: 10px
-.underLine
-    display: flex
-    height: 2px
-    background: $color-main-gray
-    width: 100%
-    opacity: .5
-    margin-bottom: 50px
+        flex-direction: row
+        justify-content: space-between
+        width: 100%
+        padding-right: 20px
+        padding-left: 20px
+        box-sizing: border-box
+        div
+            display: flex
+            svg
+                margin-right: 10px
+                align-self: center
 
-.mainText
+.funcName
+    display: inline-block
+    max-width: 120px
+    height: 100%
+
+.funcValue
+    display: flex
+    align-items: center
+    justify-content: center
+
+.buyBtn
+    @include main-button($color-main-blue)
+    width: 246px
+    color: white
+    font-size: 18px
+
+.buyBtnDiv
+    width: 100%
     display: flex
     justify-content: center
-    align-items: center
-    flex-direction: column
+    margin-top: 13px
 
-.h3
-    font-size: 20px
-    margin: 0
-    margin-bottom: 20px
-    color: black
-
-.mainText
-    color: $color-main-gray
-    font-size: 18px
-    margin-bottom: 30px
-
-.DragDrops
+.priceDiv
+    width: 100%
     display: flex
-    flex-direction: column
-    justify-content: flex-start
-    overflow: auto
-    height: 550px
+    justify-content: center
+    height: 28px
+
+.nowPrice
+    color: black
+    font-size: 18px
+    font-weight: 700
+    margin-right: 7px
+    align-self: flex-end
+
+.crossPrice
+    color: #757897
+    font-size: 16px
+    align-self: flex-start  
+    text-decoration: line-through 
+
+.hotImg
+    width: 200px

@@ -207,7 +207,7 @@ export function SidebarLayout() {
             <div className={styles.Storege1}>600GB</div>
             <div className={styles.Storege2}>800GB</div>
           </div>
-          <button className={styles.btn}>Улучшить</button>
+          <button className={styles.btn}><Link href={`/Prices`} style={{textDecoration:'none', color:'white'}}>Улучшить</Link></button>
         </div>
       </div>
     </div>
