@@ -1,20 +1,6 @@
 import styles from "./selected.module.sass";
 
 export function selected() {
-  const ArrCard: any = [
-    { name: "Документы", date: "Nov 15, 2021, 09:45 AM", fileNums: 1.322 },
-    { name: "Фото", date: " Jan 7, 2022, 03:30 PM", fileNums: 8.442 },
-    { name: "Новый год22", date: "Mar 20, 2022, 10:15 AM", fileNums: 1.0 },
-    { name: "Старый Год 33", date: "Apr 5, 2022, 01:00 PM", fileNums: 1.235 },
-    {
-      name: "Откаты на форум",
-      date: "Feb 12, 2022, 05:55 PM",
-      fileNums: 7.381,
-    },
-    { name: "Очень секретно", date: "May 25, 2022, 11:20 AM", fileNums: 3.515 },
-    { name: "Git", date: "Jul 8, 2022, 08:10 AM", fileNums: 7.962 },
-  ];
-
   return (
     <div className={styles.mainCont}>
       <div className={styles.upCont}>
