@@ -20,6 +20,7 @@ interface Cards {
 	NotAll: any;
 	currentFileId: any;
 	setSupOpen: any;
+	currentFile: any;
 }
 
 const initialState: Cards = {
@@ -103,6 +104,7 @@ const initialState: Cards = {
 	currentInput: '',
 	NameValue: '',
 	FolderID: NaN,
+	currentFile: '',
 	NotAll: [
 		{ name: 'Вы удалили файл pages.txt', id: 0 },
 		{ name: 'Вы создали папку “Супер новые технологии”', id: 1 },

@@ -3,7 +3,6 @@
 import { useState } from 'react';
 import styles from './folder.module.sass';
 import { useAppDispatch, useAppSelector } from '@/features/hooks/redux';
-import { ArrSlice } from '@/app/GlobalRedux/reducer/ArrSlice';
 import MyFile from '@/widgets/МуFilesCard/index';
 import Link from 'next/link';
 import { MyFilesSlice } from '@/app/GlobalRedux/reducer/MyFilesSlice';
