@@ -29,6 +29,9 @@ interface ModalMenu {
 	currentNameFile: number;
 	currentSearchInput: string;
 	SearchArr: SearchArr[];
+	ArrCards: any;
+	FoldersMyFiles: any;
+	ArrSelected: any;
 }
 
 const initialState: ModalMenu = {
