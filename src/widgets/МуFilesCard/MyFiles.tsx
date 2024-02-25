@@ -12,8 +12,14 @@ export const MyFile = () => {
   const dispatch = useAppDispatch();
 
   // для модального окна
-  const { arrAll, ArrCards, hoverElement, currentFileId, currentNameFile, isVisible } =
-    useAppSelector((state) => state.MyFilesSlice);
+  const {
+    arrAll,
+    ArrCards,
+    hoverElement,
+    currentFileId,
+    currentNameFile,
+    isVisible,
+  } = useAppSelector((state) => state.MyFilesSlice);
   const {
     ModalMenus,
     CurrentElement,
@@ -38,8 +44,8 @@ export const MyFile = () => {
     if (el === "video") {
       return { background: "#F1CDFF" };
     }
-    if (el === 'folder') {
-      return { background: 'rgba(0, 97, 255, 0.1)' };
+    if (el === "folder") {
+      return { background: "rgba(0, 97, 255, 0.1)" };
     }
   };
 
@@ -63,8 +69,8 @@ export const MyFile = () => {
           <span className={stylesCardLast.fileName}>
             {currentNameFile === Prpops.id ? (
               <input
-              className={stylesCardLast.renameInput}
-              placeholder="Введите новое название"
+                className={stylesCardLast.renameInput}
+                placeholder="Введите новое название"
                 onKeyDown={(e) => {
                   if (e.key === "Enter") {
                     dispatch(
@@ -309,7 +315,7 @@ export const MyFile = () => {
               </li>
               <li
                 className={stylesCardLast.info}
-                onClick={()=>{
+                onClick={() => {
                   dispatch(AddFileSelected());
                 }}
                 onMouseEnter={(e) => {
