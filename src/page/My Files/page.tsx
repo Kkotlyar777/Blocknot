@@ -3,14 +3,13 @@
 import { useState } from 'react';
 import styles from './allFiles.module.sass';
 import { useAppDispatch, useAppSelector } from '@/features/hooks/redux';
-import { ArrSlice } from '@/app/GlobalRedux/reducer/ArrSlice';
 import MyFile from '@/widgets/МуFilesCard/index';
 import { MyFilesSlice } from '@/app/GlobalRedux/reducer/MyFilesSlice';
 import { SidebarLayout } from '@/widgets/sidebar/layout';
 import { HeaderLayout } from '@/widgets/Header/layout';
 
 export const Files = () => {
-	const { arrAll, FoldersMyFiles, ArrCards, ArrSelected, currentFileId } =
+	const { arrAll, ArrCards, } =
 		useAppSelector((state) => state.MyFilesSlice);
 
 	const { DelCurrentFile, isVisibles, addArrEl, AddFolder } =
@@ -78,7 +77,7 @@ export const Files = () => {
 						<button
 							className={styles.BtnAddFolder}
 							onClick={() => {
-								dispatch(AddFolder());
+								dispatch(AddFolder('e'));
 							}}
 						>
 							Добавить папку

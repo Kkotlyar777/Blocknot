@@ -2,9 +2,7 @@
 
 import { useAppDispatch, useAppSelector } from "@/features/hooks/redux";
 import stylesCardLast from "./MyFiles.module.sass";
-import { ArrSlice } from "@/app/GlobalRedux/reducer/ArrSlice";
 import { GlobalSvgSelector } from "@/app/GlobalSvgSel";
-import { useState } from "react";
 import { MyFilesSlice } from "@/app/GlobalRedux/reducer/MyFilesSlice";
 
 export const MyFile = () => {
@@ -31,7 +29,7 @@ export const MyFile = () => {
   } = MyFilesSlice.actions;
   //-------------------------------------------------
 
-  const changeColor = (el) => {
+  const changeColor = (el: string) => {
     if (el === "application") {
       return { background: "#D3D2FF" };
     }
