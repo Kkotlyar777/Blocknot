@@ -21,6 +21,7 @@ export const CardFiles = () => {
 	return ArrCards.map((Prpops: any) => {
 		return (
 			<Link
+				key={Prpops.name}
 				href={`/Folder`}
 				style={{ textDecoration: 'none' }}
 				onClick={() => dispatch(SetFolderId(Prpops.name))}
@@ -51,6 +52,7 @@ export const CardFiles = () => {
 						</div>
 						<div className={stylesCard.Contdoc}>
 							<div
+								key={Prpops.id}
 								className={stylesCard.Maintxt}
 								onClick={(e) => e.stopPropagation()}
 							>
@@ -72,7 +74,9 @@ export const CardFiles = () => {
 								)}
 							</div>
 
-							<div className={stylesCard.date}>{Prpops.date}</div>
+							<div className={stylesCard.date} key={Prpops.date}>
+								{Prpops.date}
+							</div>
 						</div>
 						<div className={stylesCard.contSvg}>
 							<svg
@@ -117,7 +121,7 @@ export const CardFiles = () => {
 						</div>
 						<div className={stylesCard.FilesInside}>
 							<span>Файлов внутри</span>
-							<div>{Prpops.fileNums}</div>
+							<div key={Prpops.fileNums}>{Prpops.fileNums}</div>
 						</div>
 					</div>
 				</div>
