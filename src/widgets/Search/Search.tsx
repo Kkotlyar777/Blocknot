@@ -34,6 +34,7 @@ export const Search = () => {
   return SearchArr.map((Prpops: any) => {
     return (
       <Link
+      key={Prpops.id}
         href={`/MyFiles`}
         className={styles.searchList}
         onClick={(e) => {
@@ -48,7 +49,7 @@ export const Search = () => {
           >
             <GlobalSvgSelector id={Prpops.type.split("/")[0]} />
           </div>
-          <span className={styles.txt}>{Prpops.name}</span>
+          <span className={styles.txt}  key={Prpops.name}>{Prpops.name}</span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="3"
