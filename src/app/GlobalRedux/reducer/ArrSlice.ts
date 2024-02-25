@@ -4,10 +4,11 @@ import { createSlice } from '@reduxjs/toolkit';
 
 interface CardMain {
 	name: string;
-	lastModified: number;
+	lastModified: number | string;
 	fileNums: number;
 	type: string;
 	id: number;
+	size?: any;
 }
 
 interface Cards {
@@ -15,7 +16,10 @@ interface Cards {
 	arrAll: CardMain[];
 	currentInput: string;
 	NameValue: string;
-	FolderID: number; 
+	FolderID: number;
+	NotAll: any;
+	currentFileId: any;
+	setSupOpen: any;
 }
 
 const initialState: Cards = {
@@ -136,7 +140,7 @@ export const ArrSlice = createSlice({
 			state.FolderID = action.payload;
 		},
 		DelCurrentNot(state) {
-			state.NotAll.map((el, ind) => {
+			state.NotAll.map((el: any, ind: any) => {
 				if (el.id === state.currentFileId) {
 					state.NotAll.splice(ind, 1);
 				}
