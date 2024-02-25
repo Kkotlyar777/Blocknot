@@ -2,20 +2,19 @@
 
 import { useAppDispatch, useAppSelector } from "@/features/hooks/redux";
 import styles from "./Search.module.sass";
-import { ArrSlice } from "@/app/GlobalRedux/reducer/ArrSlice";
 import { GlobalSvgSelector } from "@/app/GlobalSvgSel";
 import Link from "next/link";
 import { MyFilesSlice } from "@/app/GlobalRedux/reducer/MyFilesSlice";
 
 export const Search = () => {
   //-------------------------------------------------
-  const { SearchArr, currentFileId } = useAppSelector(
+  const { SearchArr } = useAppSelector(
     (state) => state.MyFilesSlice
   );
   const { CurrentElement } = MyFilesSlice.actions;
 
   const dispatch = useAppDispatch();
-  const changeColor = (el) => {
+  const changeColor = (el: string) => {
     if (el === "application") {
       return { background: "#D3D2FF" };
     }
