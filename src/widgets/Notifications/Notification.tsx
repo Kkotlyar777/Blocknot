@@ -14,11 +14,14 @@ export const Notification = () => {
 	//----------------------------
 	return NotAll.map((Prpops: any) => {
 		return (
-			<div className={styles.card}>
+			<div
+				className={styles.card}
+				key={Prpops.id}
+			>
 				<div className={styles.logo}>
 					<img
-						src="./Logo.png"
-						alt=""
+						src='./Logo.png'
+						alt=''
 						style={{ width: '65%', height: '80%' }}
 					/>
 				</div>
@@ -33,12 +36,15 @@ export const Notification = () => {
 					{Prpops.name}
 				</div>
 				<input
-					type="checkbox"
+					type='checkbox'
 					checked={currentFileId !== Prpops.id ? false : true}
 					className={styles.btn}
 					onClick={(e) => {
 						dispatch(CurrentElement(Prpops.id));
-						setTimeout(() => dispatch(DelCurrentNot(currentFileId)), 2000);
+						setTimeout(
+							() => dispatch(DelCurrentNot(currentFileId)),
+							2000
+						);
 					}}
 				/>
 			</div>
