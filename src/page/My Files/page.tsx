@@ -9,7 +9,7 @@ import { MyFilesSlice } from '@/app/GlobalRedux/reducer/MyFilesSlice';
 import { SidebarLayout } from '@/widgets/sidebar/layout';
 import { HeaderLayout } from '@/widgets/Header/layout';
 
-export const files = () => {
+export const Files = () => {
 	const { arrAll, FoldersMyFiles, ArrCards, ArrSelected, currentFileId } =
 		useAppSelector((state) => state.MyFilesSlice);
 
