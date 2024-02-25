@@ -7,7 +7,7 @@ interface UserState {
 }
 
 const initialState: UserState = {
-  numPage: Number(localStorage.getItem("numMenu")) || 0,
+  numPage: 0,
 };
 
 export const SideBarSlice = createSlice({
@@ -16,7 +16,6 @@ export const SideBarSlice = createSlice({
   reducers: {
     setNumPage(state, action) {
       state.numPage = action.payload;
-      localStorage.setItem("numMenu", state.numPage.toString());
     },
   },
 });
