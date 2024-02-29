@@ -4,8 +4,6 @@ import "./globals.sass";
 import SidebarLayout from "@/widgets/sidebar/index";
 import HeaderLayout from "@/widgets/Header/index";
 import { Provid } from "../GlobalRedux/reducer/provider";
-// import { basketSidebar } from './Layouts/basket/sidebar';
-// import { Provid } from "./GlobalRedux/reducer/provider";
 
 const lato = Lato({
   weight: ["400", "700"],

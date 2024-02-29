@@ -1,0 +1,118 @@
+@import ../../app/MainLayout/globals
+
+.backDiv
+    width: 100%
+    height: 100%
+    display: flex
+    justify-content: center
+    align-items: center
+    background-image: url('backgroundBlur.png')
+    background-repeat: no-repeat
+    background-size: cover
+
+.titleLog
+    font-size: 20px
+    font-weight: bold
+    color: $color-main-blue
+
+.title
+    font-size: 20px
+
+.titleDiv
+    display: flex
+    gap: 30px
+    margin-bottom: 50px
+    height: 25px
+    display: flex
+    align-items: center
+
+.bottomSpan
+    height: 1px
+    background: black
+    width: 280px
+
+.mainForm
+    flex-direction: column
+    display: flex
+    justify-content: center
+    align-items: center
+    gap: 15px
+    margin-bottom: 50px
+
+.botForm
+    flex-direction: column
+    display: flex
+    justify-content: center
+    align-items: center
+    gap: 20px
+
+.mainDiv
+    width: 450px
+    height: 450px
+    flex-direction: column
+    display: flex
+    align-items: center
+    padding: 45px
+    box-sizing: border-box
+    background: white
+    border-radius: 10px
+    box-shadow: 3px 3px 10px 0px rgba(0,0,0,0.4)
+    input
+        width: 260px
+        height: 40px
+        outline: none
+        border: none
+        border-radius: 5px
+        color: black
+        font-size: 12px
+        border-bottom: 1px black
+        background: $color-light-blue
+
+.logInBtn
+    @include main-button($color-main-blue)
+    width: 280px
+    height: 40px
+    cursor: pointer
+    background: $color-main-blue
+    outline: none
+    border: none
+    border-radius: 5px
+    color: white
+    font-size: 14px
+
+.logWithGoggle
+    width: 280px
+    height: 40px
+    cursor: pointer
+    background: white
+    border: 1px solid $color-main-blue
+    border-radius: 5px
+    color: black
+    font-size: 14px
+    display: flex
+    justify-content: center
+    align-items: center
+    gap: 20px
+    img
+        width: 20px
+        height: 20px
+
+.loginInput
+    background: $color-light-blue
+    width: 295px
+    height: 42px
+    border-radius: 5px
+    display: flex
+    align-items: center
+
+.passInput
+    background: $color-light-blue
+    width: 295px
+    height: 42px
+    border-radius: 5px
+
+.emailInput
+    background: $color-light-blue
+    width: 295px
+    height: 42px
+    border-radius: 5px

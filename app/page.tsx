@@ -1,8 +1,8 @@
-import Home from "@/page/Main/index";
-import { Metadata } from "next";
+import Login from '@/page/Login/index';
+import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "Bloknot",
+	title: 'Login',
 };
 
-export default Home;
+export default Login;
