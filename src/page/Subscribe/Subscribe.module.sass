@@ -1,0 +1,96 @@
+
+@import ../../app/MainLayout/globals
+    
+.MainCont
+    display: flex
+    width: 100%
+    height: 100%
+    justify-content: flex-start
+    align-items: flex-start
+
+.MainContentLayout
+    width: 100%
+    height: 100%
+    
+
+.MainContent
+    width: 1500px
+    height: 600px
+    display: flex
+    flex-direction: column
+    justify-content: flex-start
+    align-items: flex-start
+    margin-top: 50px
+    
+
+.cub
+    border-radius: 10px
+    width: 1303px
+    height: 120px
+    flex-shrink: 0
+    display: flex
+    background: #d9d9d9
+    justify-content: flex-start
+    align-items: center
+    img
+        margin-left: 40px
+        width: 50px
+        height: 64px
+        margin-right: 55px
+
+
+.textCont
+    height: 70%
+    width: 950px
+    display: flex
+    justify-content: flex-start
+    align-items: flex-start
+
+
+.toptext
+    margin-left: 109px
+    border-radius: 4px
+    width: 81px
+    height: 17px
+    background: #0061ff
+    font-weight: 400
+    font-size: 13px
+    line-height: 1.38462
+    text-align: center
+    color: #051f61
+
+.undertext
+    font-weight: 700
+    font-size: 20px
+    line-height: 0.9
+    text-decoration: underline
+    text-decoration-skip-ink: none
+    text-align: center
+    color: #000
+    margin-bottom: 30px
+.price
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: flex-start
+
+    
+.info
+    font-weight: 400
+    font-size: 14px
+    line-height: 1.8
+    text-align: center
+    color: #000
+    
+
+
+
+
+
+.btn
+    @include main-button($color-main-blue)
+    font-weight: 700
+    font-size: 14px
+    line-height: 1.42857
+    text-align: center
+    color: #fff
