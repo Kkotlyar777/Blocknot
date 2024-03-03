@@ -22,7 +22,7 @@ export function OptionsHeader() {
 				</div>
 				<div className={styles.Sub}>
 					<Link
-						href={`/ReferalSystem`}
+						href={`/Subscribe`}
 						className={styles.Link}
 					>
 						Подписки
@@ -30,7 +30,7 @@ export function OptionsHeader() {
 				</div>
 				<div className={styles.Referal}>
 					<Link
-						href={`/Subscribe`}
+						href={`/ReferalSystem`}
 						className={styles.Link}
 					>
 						Реферальная система
