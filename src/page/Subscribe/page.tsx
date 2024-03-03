@@ -1,6 +1,7 @@
 import style from '@/page/Subscribe/Subscribe.module.sass';
 import OptionsHeader from '@/widgets/OptionsHeader';
 import SidebarLayout from '@/widgets/sidebar';
+import Link from 'next/link';
 
 export const Subscribe = () => {
 	return (
@@ -10,7 +11,7 @@ export const Subscribe = () => {
 				<OptionsHeader />
 				<div className={style.MainContent}>
 					<div className={style.cub}>
-						<img src='/Logo.png' />
+						<img src="/Logo.png" />
 						<div className={style.textCont}>
 							<div className={style.price}>
 								<div className={style.toptext}>150 ₽/мес</div>
@@ -20,7 +21,14 @@ export const Subscribe = () => {
 								</div>
 							</div>
 						</div>
-						<button className={style.btn}>Улучшить</button>
+						<button className={style.btn}>
+							<Link
+								href={`/Prices`}
+								style={{ textDecoration: 'none', color: 'white' }}
+							>
+								Улучшить
+							</Link>
+						</button>
 					</div>
 				</div>
 			</div>

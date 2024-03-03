@@ -6,7 +6,7 @@ import styles from './Prices.module.sass';
 export const prices = () => {
 	return (
 		<div className={styles.prices}>
-			<Link href={`/`}>
+			<Link href={`/Home`}>
 				<img src="/Logo.png" alt="Logo" className={styles.mainImg} />
 			</Link>
 			<div className={styles.mainPrices}>

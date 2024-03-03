@@ -13,7 +13,10 @@ export function SidebarLayout() {
 
 	return (
 		<div className={styles.sidebar}>
-			<img src="/Logo.png" alt="" />
+			<Link href={`/Home`} style={{ textDecoration: 'none' }}>
+				<img src="/Logo.png" alt="" />
+			</Link>
+
 			<div className={styles.cont}>
 				<div className={styles.Popup}>
 					<Popup mT={31} dN={numPage === 0 ? '1' : '0'} />

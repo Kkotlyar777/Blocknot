@@ -71,7 +71,9 @@ const Profile = () => {
 							stroke-linecap="round"
 						/>
 					</svg>
-					Мой Блокнот
+					<Link href={`/Home`} className={style.Link}>
+						Мой Блокнот
+					</Link>
 				</div>
 				<div className={style.theme}>
 					<svg
@@ -93,7 +95,9 @@ const Profile = () => {
 							stroke-linecap="round"
 						/>
 					</svg>
-					<Link href={`/ReferalSystem`}>Реферальная система</Link>
+					<Link href={`/ReferalSystem`} className={style.Link}>
+						Реферальная система
+					</Link>
 				</div>
 				<div className={style.theme}>
 					<svg
@@ -112,7 +116,9 @@ const Profile = () => {
 							stroke="#222222"
 						/>
 					</svg>
-					Сменить тему
+					<Link href={``} className={style.Link}>
+						Сменить тему
+					</Link>
 				</div>
 				<div className={style.langth}>
 					<svg
@@ -129,7 +135,9 @@ const Profile = () => {
 						/>
 						<path d="M4.5 12H19.5" stroke="#33363F" stroke-linecap="round" />
 					</svg>
-					Сменить язык
+					<Link href={``} className={style.Link}>
+						Сменить язык
+					</Link>
 				</div>
 				<div className={style.options}>
 					<svg
@@ -144,10 +152,7 @@ const Profile = () => {
 							fill="#222222"
 						/>
 					</svg>
-					<Link
-						href={`/Settings`}
-						style={{ textDecoration: 'none', color: 'black' }}
-					>
+					<Link href={`/Settings`} className={style.Link}>
 						Настройки
 					</Link>
 				</div>
@@ -168,7 +173,9 @@ const Profile = () => {
 							stroke="#222222"
 						/>
 					</svg>
-					Выйти
+					<Link href={``} className={style.Link}>
+						Выйти
+					</Link>
 				</div>
 			</div>
 		</div>
