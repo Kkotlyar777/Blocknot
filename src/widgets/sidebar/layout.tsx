@@ -44,7 +44,7 @@ export function SidebarLayout() {
 							style={
 								numPage === 0 ? { color: '#0061FF' } : { color: '#838D94' }
 							}
-							href={'/'}
+							href={'/Home'}
 							className={styles.link}
 						>
 							Главная
