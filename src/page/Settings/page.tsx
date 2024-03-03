@@ -1,4 +1,4 @@
-import style from '@/page/OptionsMain/OptionsMain.module.sass';
+import style from '@/page/Settings/OptionsMain.module.sass';
 import OptionsHeader from '@/widgets/OptionsHeader';
 import SidebarLayout from '@/widgets/sidebar';
 
