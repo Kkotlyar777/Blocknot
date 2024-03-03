@@ -9,9 +9,11 @@ export const Referal = () => {
 			<div className={style.MainContentLayout}>
 				<OptionsHeader />
 				<div className={style.MainContent}>
-					<div className={style.}>Рассказывайте о нас своим друзьям и получайте подарки !</div>
-					<span></span>
-					<div>Получить промокод</div>
+					<div className={style.MainTitle}>
+						Рассказывайте о нас своим друзьям и получайте подарки !
+					</div>
+					<span className={style.TitleSpan}></span>
+					<div className={style.GetPromo}>Получить промокод</div>
 					<div>
 						<div>Ваш промокод:</div>
 						<div>abx12-123axc-asd</div>
